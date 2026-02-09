@@ -50,7 +50,7 @@ html, body {
 .platform-row {
   display: flex;
   justify-content: center;
-  gap: 64px;
+  gap: 128px;
 }
 
 /* RECTANGLE STYLE */
@@ -82,7 +82,7 @@ html, body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 110px;          /* NOT stuck to bottom */
+  bottom: 310px;          /* NOT stuck to bottom */
   width: 100%;
   background: rgba(255,255,255,0.96);
   overflow: hidden;
