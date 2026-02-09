@@ -5,19 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pazh Powertrain</title>
   <meta name="description" content="Hydrogen retrofit propulsion systems for hard-to-electrify sectors." />
+
+  <!-- Cosmetic font (free) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
-      <a href="#platforms" class="hero-link">Explore our platforms →</a>
+    <!-- Two rectangles BEHIND the headline -->
+    <div class="platform-panels" aria-hidden="true">
+      <div class="panel panel--rotor">
+        <div class="panel-title">H₂Rotor</div>
+        <div class="panel-sub">Rotorcraft retrofit platform</div>
+      </div>
+
+      <div class="panel panel--vessel">
+        <div class="panel-title">H₂Vessel</div>
+        <div class="panel-sub">Marine propulsion retrofit platform</div>
+      </div>
     </div>
 
-    <!-- MOVING LOGO RIBBON -->
-    <div class="logo-ribbon
+    <!-- Headline on top -->
+    <div class="hero-content">
+      <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
+    </div>
+
+    <!-- White moving ribbon (with spacing above bottom) -->
+    <div class="logo-ribbon" aria-label="Partner logos">
+      <div class="logo-track">
+        <div class="logo-set">
+          <img src="assets/ribbon/Logo1.png" alt="Partner logo" />
+          <img src="assets/ribbon/Logo2.png" alt="Partner logo" />
+          <img src="assets/ribbon/Logo3.png" alt="Partner logo" />
+          <img src="assets/ribbon/Logo4.png" alt="Partner logo" />
+          <img src="assets/ribbon/Logo5.png" alt="Partner logo" />
+        </div>
+
+        <!-- duplicate for seamless loop -->
+        <div class="logo-set" aria-hidden="true">
+          <img src="assets/ribbon/Logo1.png" alt="" />
+          <img src="assets/ribbon/Logo2.png" alt="" />
+          <img src="assets/ribbon/Logo3.png" alt="" />
+          <img src="assets/ribbon/Logo4.png" alt="" />
+          <img src="assets/ribbon/Logo5.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
