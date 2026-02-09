@@ -1,4 +1,3 @@
-/* Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -48,7 +47,6 @@ body {
   font-size: 14px;
   opacity: 0.85;
 }
-
 .nav-links a:hover { opacity: 1; }
 
 .btn {
@@ -57,34 +55,48 @@ body {
   border: 1px solid rgba(0,0,0,0.14);
 }
 
-/* Hero */
+/* HERO */
 .hero {
   position: relative;
-  min-height: 72vh;
-  background: url("/PazhPowertrainPage/assets/MainPageBackGround.jpg?v=9") center/cover no-repeat;
+  min-height: 78vh; /* not full screen so it scrolls nicely */
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
+/* Live video background */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* blur video for “live blur” look */
+  filter: blur(10px) saturate(1.1);
+  transform: scale(1.08); /* prevents blur edges */
+}
+
+/* overlay for contrast */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.38);
+  background: rgba(0,0,0,0.35);
 }
 
+/* hero content */
 .hero-inner {
   position: relative;
   z-index: 2;
-  padding: 92px 0 54px;
+  padding: 90px 0 120px; /* space for ribbon */
   color: #fff;
-  text-align: left;
 }
 
 .hero h1 {
   font-size: clamp(36px, 4.6vw, 62px);
   font-weight: 800;
-  letter-spacing: 0.01em;
   line-height: 1.05;
+  letter-spacing: 0.01em;
 }
 
 .hero-sub {
@@ -95,17 +107,47 @@ body {
   line-height: 1.6;
 }
 
-/* Partner ribbon under hero */
+/* platform rectangles */
+.platform-row {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: min(820px, 100%);
+}
+
+.platform-card {
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  padding: 14px 16px;
+  backdrop-filter: blur(8px);
+}
+
+.platform-title {
+  font-size: 14px; /* small & beautiful */
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.platform-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Ribbon: smaller than before */
 .partners-ribbon {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -26px; /* slight overlap into next section like a “band” */
+  bottom: -26px; /* slight overlap into next section */
   z-index: 3;
 }
 
 .ribbon {
-  background: #fff;
+  background: rgba(255,255,255,0.95);
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 18px 45px rgba(0,0,0,0.18);
@@ -122,11 +164,11 @@ body {
   display: flex;
   align-items: center;
   gap: 60px;
-  padding: 18px 28px;
+  padding: 14px 22px; /* smaller ribbon */
 }
 
 .ribbon-set img {
-  height: 44px;
+  height: 34px; /* readable but not huge */
   width: auto;
   object-fit: contain;
   opacity: 0.95;
@@ -140,13 +182,8 @@ body {
 }
 
 /* Sections */
-.section {
-  padding: 86px 0;
-}
-
-.section-muted {
-  background: #f6f7f8;
-}
+.section { padding: 86px 0; }
+.section-muted { background: #f6f7f8; }
 
 .section h2 {
   font-size: 34px;
@@ -176,16 +213,8 @@ body {
   padding: 18px;
 }
 
-.stat-num {
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.stat-label {
-  margin-top: 6px;
-  color: rgba(0,0,0,0.7);
-  font-size: 14px;
-}
+.stat-num { font-size: 28px; font-weight: 800; }
+.stat-label { margin-top: 6px; color: rgba(0,0,0,0.7); font-size: 14px; }
 
 /* Cards */
 .cards {
@@ -203,25 +232,11 @@ body {
   box-shadow: 0 12px 26px rgba(0,0,0,0.06);
 }
 
-.card h3 {
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: rgba(0,0,0,0.72);
-  line-height: 1.7;
-  font-size: 14px;
-}
+.card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.card p { color: rgba(0,0,0,0.72); line-height: 1.7; font-size: 14px; }
 
 /* List */
-.list {
-  margin-top: 22px;
-  display: grid;
-  gap: 10px;
-}
-
+.list { margin-top: 22px; display: grid; gap: 10px; }
 .list-item {
   display: flex;
   justify-content: space-between;
@@ -230,10 +245,7 @@ body {
   background: #fff;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.08);
-  text-decoration: none;
-  color: #111;
 }
-
 .list-title { font-weight: 800; }
 .list-meta { color: rgba(0,0,0,0.65); }
 
@@ -244,7 +256,6 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
-
 .contact-label {
   font-size: 12px;
   color: rgba(0,0,0,0.6);
@@ -252,11 +263,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-
-.contact-value {
-  margin-top: 6px;
-  font-weight: 700;
-}
+.contact-value { margin-top: 6px; font-weight: 700; }
 
 /* Footer */
 .footer {
@@ -271,5 +278,6 @@ body {
   .cards { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
-  .nav-links { display: none; } /* keep it simple for now */
+  .platform-row { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
 }
