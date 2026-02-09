@@ -1,71 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pazh Powertrain</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Hydrogen retrofit propulsion systems for hard-to-electrify applications." />
 
-  <!-- Modern cosmetic font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Clean, modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- cache-buster so you ALWAYS see changes -->
+  <link rel="stylesheet" href="styles.css?v=20260208_w21c1" />
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- Top Nav (simple, professional) -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">PAZH POWERTRAIN</div>
 
-    <div class="hero-content">
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-      <h1>
-        DECARBONIZING<br>
-        HARD-TO-ELECTRIFY<br>
-        PROPULSION
-      </h1>
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
 
-      <!-- PLATFORM RECTANGLES -->
-      <div class="platform-row">
+      <div class="container hero-inner">
+        <h1>MAKING PROPULSION CLEANER</h1>
+        <p class="hero-sub">
+          Pazh Powertrain develops hydrogen retrofit platforms for hard-to-electrify propulsion in aviation and marine sectors.
+        </p>
+      </div>
 
-        <div class="platform-card">
-          <div class="platform-title">H2Rotor</div>
-          <div class="platform-sub">
-            Rotorcraft retrofit platform
+      <!-- Partner ribbon directly under hero message (like w21c) -->
+      <section class="partners-ribbon" aria-label="Partners">
+        <div class="container">
+          <div class="ribbon">
+            <div class="ribbon-track">
+              <!-- Use whatever logos you have; repeat for smooth scrolling -->
+              <div class="ribbon-set">
+                <img src="assets/Logo1.png" alt="Partner logo">
+                <img src="assets/Logo1.png" alt="Partner logo">
+                <img src="assets/Logo1.png" alt="Partner logo">
+                <img src="assets/Logo1.png" alt="Partner logo">
+              </div>
+              <div class="ribbon-set" aria-hidden="true">
+                <img src="assets/Logo1.png" alt="">
+                <img src="assets/Logo1.png" alt="">
+                <img src="assets/Logo1.png" alt="">
+                <img src="assets/Logo1.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Why work with us (stats) -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Why Work With Us</h2>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Platforms</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">MVP</div>
+            <div class="stat-label">Test & validation phase</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">H₂</div>
+            <div class="stat-label">Retrofit-first approach</div>
           </div>
         </div>
 
-        <div class="platform-card">
-          <div class="platform-title">H2Vessel</div>
-          <div class="platform-sub">
-            Marine propulsion retrofit platform
+        <p class="lead">
+          We help partners evaluate feasibility, integration, and validation pathways for hydrogen propulsion retrofits with a practical engineering approach.
+        </p>
+      </div>
+    </section>
+
+    <!-- Platforms -->
+    <section id="platforms" class="section section-muted">
+      <div class="container">
+        <h2>Platforms</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>H₂Rotor</h3>
+            <p>Hydrogen retrofit platform for rotorcraft propulsion systems.</p>
+          </article>
+
+          <article class="card">
+            <h3>H₂Vessel</h3>
+            <p>Hydrogen retrofit platform for marine propulsion and auxiliary power.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>We can assist you with</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Integration & Controls</h3>
+            <p>Controller architecture, digital interfaces, PLC/embedded prototyping, instrumentation and commissioning.</p>
+          </article>
+
+          <article class="card">
+            <h3>Test & Validation</h3>
+            <p>Prototype test planning, measurement, sensitivity testing, and performance characterization.</p>
+          </article>
+
+          <article class="card">
+            <h3>Feasibility & Techno-economic</h3>
+            <p>Mass/energy budgeting, efficiency analysis, and practical pathways to early deployments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Select projects -->
+    <section id="projects" class="section section-muted">
+      <div class="container">
+        <h2>Select Projects</h2>
+
+        <div class="list">
+          <a class="list-item" href="#">
+            <span class="list-title">H₂Rotor Proof of Concept</span>
+            <span class="list-meta">MVP test stand + sensitivity analysis</span>
+          </a>
+          <a class="list-item" href="#">
+            <span class="list-title">H₂Vessel Export Planning</span>
+            <span class="list-meta">Early partner engagement + LOIs</span>
+          </a>
+          <a class="list-item" href="#">
+            <span class="list-title">Controls & Interface Lab</span>
+            <span class="list-meta">Digital interface PCB + PLC-based controller</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="section">
+      <div class="container">
+        <h2>Latest News</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Project milestone update</h3>
+            <p>Short update describing the latest progress and next step.</p>
+          </article>
+
+          <article class="card">
+            <h3>Partner highlight</h3>
+            <p>One paragraph about a collaboration, facility, or lab capability.</p>
+          </article>
+
+          <article class="card">
+            <h3>Event or announcement</h3>
+            <p>Upcoming demo, talk, or application deadline.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-muted">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">info@pazhpowertrain.com</div>
+          </div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Calgary, Alberta, Canada</div>
           </div>
         </div>
-
       </div>
+    </section>
 
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Pazh Powertrain. All rights reserved.
     </div>
+  </footer>
 
-    <!-- PARTNER LOGO RIBBON -->
-    <div class="logo-ribbon">
-      <div class="logo-track">
-
-        <div class="logo-set">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-        </div>
-
-        <!-- duplicate for seamless loop -->
-        <div class="logo-set">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-          <img src="assets/Logo1.png" alt="Partner">
-        </div>
-
-      </div>
-    </div>
-
-  </section>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
