@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- cache-buster so you always see updates -->
-  <link rel="stylesheet" href="styles.css?v=20260208_final1" />
+  <link rel="stylesheet" href="styles.css?v=20260208_final2" />
 </head>
 
 <body>
@@ -69,46 +69,23 @@
     </div>
   </section>
 
-  <!-- Partners section (like your screenshot) -->
-  <section class="partners">
+  <!-- Partners -->
+  <section class="partners" aria-label="Our partners">
     <div class="container">
       <h2 class="partners-title">Our Partners</h2>
 
-      <div class="partners-logos" aria-label="Partner logos">
-  <div class="partners-track">
-    <!-- Set 1 -->
-    <img src="assets/ribbon/Logo1.png" alt="Partner logo">
-
-    <!-- Set 2 (duplicate for smooth loop) -->
-    <img src="assets/ribbon/Logo1.png" alt="Partner logo">
-  </div>
-</div>
-.partners-logos {
-  overflow: hidden;
-  width: 100%;
-  padding: 24px 0;     /* ribbon height */
-}
-
-.partners-track {
-  display: flex;
-  align-items: center;
-  gap: 120px;          /* space between logos */
-  width: max-content;
-  animation: partnersMarquee 26s linear infinite;
-}
-
-@keyframes partnersMarquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-.partners-logos img {
-  height: 120px;      /* logo size */
-  width: auto;
-  object-fit: contain;
-}
-
-      
+      <!-- IMPORTANT:
+           Put EACH logo only ONCE here.
+           The script below will duplicate internally for smooth scrolling. -->
+      <div class="partners-ribbon">
+        <div class="partners-track" id="partnersTrack">
+          <!-- Replace/add logos that exist in assets/ribbon/ -->
+          <img src="assets/ribbon/Logo1.png" alt="Partner logo">
+          <!-- Example:
+          <img src="assets/ribbon/InnoTechAlberta.png" alt="InnoTech Alberta">
+          <img src="assets/ribbon/InnovateCalgary.png" alt="Innovate Calgary">
+          -->
+        </div>
       </div>
     </div>
   </section>
@@ -175,7 +152,22 @@
   </footer>
 
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // partners: duplicate internally for smooth marquee, but YOU list each logo only once in HTML
+    (function () {
+      const track = document.getElementById("partnersTrack");
+      if (!track) return;
+
+      // If there are 0/1 logos, no need to animate
+      const logos = Array.from(track.querySelectorAll("img"));
+      if (logos.length < 2) return;
+
+      // Duplicate once to allow seamless scroll
+      logos.forEach(img => track.appendChild(img.cloneNode(true)));
+      track.classList.add("is-animated");
+    })();
   </script>
 
 </body>
