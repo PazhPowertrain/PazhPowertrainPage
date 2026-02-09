@@ -4,172 +4,85 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pazh Powertrain</title>
-  <meta name="description" content="Hydrogen retrofit propulsion systems for hard-to-abate sectors." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- cache-buster so you always see updates -->
-  <link rel="stylesheet" href="styles.css?v=20260208_final2" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Pazh Powertrain">
-        <img
-          class="brand-logo"
-          src="assets/company-logo.png"
-          alt="Pazh Powertrain logo"
-          onerror="this.style.display='none';"
-        />
-        <span class="brand-text">PAZH POWERTRAIN</span>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <img src="assets/company-logo.png" class="brand-logo" alt="Pazh Powertrain">
+      <span class="brand-text">PAZH POWERTRAIN</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-inner">
+    <h1>
+      DECARBONIZING<br>
+      HARD-TO-ELECTRIFY<br>
+      PROPULSION
+    </h1>
+
+    <p class="hero-sub">
+      Hydrogen retrofit platforms for aviation and marine propulsion.
+    </p>
+
+    <div id="platforms" class="platform-row">
+      <a class="platform-card" href="h2rotor.html">
+        <div class="platform-title">H₂Rotor</div>
+        <div class="platform-sub">Rotorcraft retrofit platform</div>
       </a>
 
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#platforms">Platforms</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" class="btn">Contact</a>
-      </nav>
+      <a class="platform-card" href="h2vessel.html">
+        <div class="platform-title">H₂Vessel</div>
+        <div class="platform-sub">Marine propulsion retrofit platform</div>
+      </a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <!-- Live blurred video -->
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/hero.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="container">
+    <h2 class="partners-title">Our Partners</h2>
 
-    <div class="container hero-inner">
-      <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
-
-      <p class="hero-sub">
-        Hydrogen retrofit platforms for aviation and marine propulsion—practical engineering, integration, and validation.
-      </p>
-
-      <!-- Platform tiles (clickable) -->
-      <div id="platforms" class="platform-row">
-        <a class="platform-card" href="h2rotor.html">
-          <div class="platform-title">H₂Rotor</div>
-          <div class="platform-sub">Rotorcraft retrofit platform</div>
-        </a>
-
-        <a class="platform-card" href="h2vessel.html">
-          <div class="platform-title">H₂Vessel</div>
-          <div class="platform-sub">Marine propulsion retrofit platform</div>
-        </a>
+    <div class="partners-logos">
+      <div class="partners-track">
+        <!-- EACH LOGO ONLY ONCE -->
+        <img src="assets/ribbon/Logo1.png" alt="Partner 1">
+        <img src="assets/ribbon/Logo2.png" alt="Partner 2">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Partners -->
-  <section class="partners" aria-label="Our partners">
-    <div class="container">
-      <h2 class="partners-title">Our Partners</h2>
-
-      <!-- IMPORTANT:
-           Put EACH logo only ONCE here.
-           The script below will duplicate internally for smooth scrolling. -->
-      <div class="partners-ribbon">
-        <div class="partners-track" id="partnersTrack">
-          <!-- Replace/add logos that exist in assets/ribbon/ -->
-          <img src="assets/ribbon/Logo1.png" alt="Partner logo1">
-           <img src="assets/ribbon/Logo2.png" alt="Partner logo2">
-          <!-- Example:
-          <img src="assets/ribbon/InnoTechAlberta.png" alt="InnoTech Alberta">
-          <img src="assets/ribbon/InnovateCalgary.png" alt="Innovate Calgary">
-          -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content sections (scroll works) -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>Why Work With Us</h2>
-
-      <div class="stats">
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Platforms</div></div>
-        <div class="stat"><div class="stat-num">MVP</div><div class="stat-label">Testing & validation</div></div>
-        <div class="stat"><div class="stat-num">H₂</div><div class="stat-label">Retrofit-first</div></div>
-      </div>
-
-      <p class="lead">
-        We help partners evaluate feasibility, integration, and validation pathways for hydrogen propulsion retrofits.
-      </p>
-    </div>
-  </section>
-
-  <section id="services" class="section section-muted">
-    <div class="container">
-      <h2>Services</h2>
-      <div class="cards">
-        <article class="card"><h3>System Integration</h3><p>Mechanical and controls integration support for prototypes and retrofit kits.</p></article>
-        <article class="card"><h3>Testing & Validation</h3><p>Sensitivity testing, measurement planning, and performance characterization.</p></article>
-        <article class="card"><h3>Feasibility</h3><p>Mass/energy budgeting, efficiency analysis, and deployment pathways.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Select Projects</h2>
-      <div class="list">
-        <div class="list-item"><span class="list-title">H₂Rotor Proof of Concept</span><span class="list-meta">MVP + sensitivity analysis</span></div>
-        <div class="list-item"><span class="list-title">H₂Vessel Partnerships</span><span class="list-meta">Early LOIs and export planning</span></div>
-        <div class="list-item"><span class="list-title">Controls Lab</span><span class="list-meta">PCB interface + PLC controller</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section section-muted">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact">
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">info@pazhpowertrain.com</div>
-        </div>
-        <div>
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Calgary, Alberta, Canada</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // partners: duplicate internally for smooth marquee, but YOU list each logo only once in HTML
-    (function () {
-      const track = document.getElementById("partnersTrack");
-      if (!track) return;
-
-      // If there are 0/1 logos, no need to animate
-      const logos = Array.from(track.querySelectorAll("img"));
-      if (logos.length < 2) return;
-
-      // Duplicate once to allow seamless scroll
-      logos.forEach(img => track.appendChild(img.cloneNode(true)));
-      track.classList.add("is-animated");
-    })();
-  </script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    © 2026 Pazh Powertrain
+  </div>
+</footer>
 
 </body>
 </html>
