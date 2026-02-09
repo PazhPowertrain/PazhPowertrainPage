@@ -310,3 +310,10 @@ body {
   .partners-track img { height: 64px; }
   .partners-track { gap: 56px; }
 }
+
+#about,
+#services,
+#projects {
+  display: none !important;
+}
+
