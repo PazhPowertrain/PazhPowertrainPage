@@ -75,15 +75,40 @@
       <h2 class="partners-title">Our Partners</h2>
 
       <div class="partners-logos" aria-label="Partner logos">
-        <!-- Put partner logos in: assets/ribbon/
-             Then add ONE line per logo here.
-             Examples below use your existing file "Logo1.png".
-        -->
-        <img src="assets/ribbon/Logo1.png" alt="Partner logo">
-        <!-- Add more, like:
-        <img src="assets/ribbon/InnovateCalgary.png" alt="Innovate Calgary">
-        <img src="assets/ribbon/InnoTechAlberta.png" alt="InnoTech Alberta">
-        -->
+  <div class="partners-track">
+    <!-- Set 1 -->
+    <img src="assets/ribbon/Logo1.png" alt="Partner logo">
+
+    <!-- Set 2 (duplicate for smooth loop) -->
+    <img src="assets/ribbon/Logo1.png" alt="Partner logo">
+  </div>
+</div>
+.partners-logos {
+  overflow: hidden;
+  width: 100%;
+  padding: 24px 0;     /* ribbon height */
+}
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 120px;          /* space between logos */
+  width: max-content;
+  animation: partnersMarquee 26s linear infinite;
+}
+
+@keyframes partnersMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.partners-logos img {
+  height: 120px;      /* logo size */
+  width: auto;
+  object-fit: contain;
+}
+
+      
       </div>
     </div>
   </section>
