@@ -6,202 +6,156 @@
   <title>Pazh Powertrain</title>
   <meta name="description" content="Hydrogen retrofit propulsion systems for hard-to-electrify applications." />
 
-  <!-- Clean, modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- cache-buster so you ALWAYS see changes -->
-  <link rel="stylesheet" href="styles.css?v=20260208_w21c1" />
+  <link rel="stylesheet" href="styles.css?v=20260208_video1" />
 </head>
 
 <body>
 
-  <!-- Top Nav (simple, professional) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <div class="brand">PAZH POWERTRAIN</div>
-
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#platforms">Platforms</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
-        <a href="#news">News</a>
-        <a class="btn" href="#contact">Contact</a>
+        <a href="#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
+  <!-- HERO with LIVE BLUR VIDEO -->
+  <section class="hero">
+    <!-- Put your video in assets/hero.mp4 -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
 
-      <div class="container hero-inner">
-        <h1>MAKING PROPULSION CLEANER</h1>
-        <p class="hero-sub">
-          Pazh Powertrain develops hydrogen retrofit platforms for hard-to-electrify propulsion in aviation and marine sectors.
-        </p>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
+      <p class="hero-sub">
+        Hydrogen retrofit platforms for aviation and marine propulsion—practical engineering, integration, and validation.
+      </p>
+
+      <div class="platform-row">
+        <div class="platform-card">
+          <div class="platform-title">H₂Rotor</div>
+          <div class="platform-sub">Rotorcraft retrofit platform</div>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-title">H₂Vessel</div>
+          <div class="platform-sub">Marine propulsion retrofit platform</div>
+        </div>
       </div>
+    </div>
 
-      <!-- Partner ribbon directly under hero message (like w21c) -->
-      <section class="partners-ribbon" aria-label="Partners">
-        <div class="container">
-          <div class="ribbon">
-            <div class="ribbon-track">
-              <!-- Use whatever logos you have; repeat for smooth scrolling -->
-              <div class="ribbon-set">
-                <img src="assets/Logo1.png" alt="Partner logo">
-                <img src="assets/Logo1.png" alt="Partner logo">
-                <img src="assets/Logo1.png" alt="Partner logo">
-                <img src="assets/Logo1.png" alt="Partner logo">
-              </div>
-              <div class="ribbon-set" aria-hidden="true">
-                <img src="assets/Logo1.png" alt="">
-                <img src="assets/Logo1.png" alt="">
-                <img src="assets/Logo1.png" alt="">
-                <img src="assets/Logo1.png" alt="">
-              </div>
+    <!-- SMALLER ribbon -->
+    <div class="partners-ribbon" aria-label="Partners">
+      <div class="container">
+        <div class="ribbon">
+          <div class="ribbon-track">
+            <div class="ribbon-set">
+              <img src="assets/Logo1.png" alt="Partner logo">
+              <img src="assets/Logo1.png" alt="Partner logo">
+              <img src="assets/Logo1.png" alt="Partner logo">
+              <img src="assets/Logo1.png" alt="Partner logo">
+            </div>
+            <div class="ribbon-set" aria-hidden="true">
+              <img src="assets/Logo1.png" alt="">
+              <img src="assets/Logo1.png" alt="">
+              <img src="assets/Logo1.png" alt="">
+              <img src="assets/Logo1.png" alt="">
             </div>
           </div>
         </div>
-      </section>
-    </section>
-
-    <!-- Why work with us (stats) -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>Why Work With Us</h2>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-num">2</div>
-            <div class="stat-label">Platforms</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">MVP</div>
-            <div class="stat-label">Test & validation phase</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">H₂</div>
-            <div class="stat-label">Retrofit-first approach</div>
-          </div>
-        </div>
-
-        <p class="lead">
-          We help partners evaluate feasibility, integration, and validation pathways for hydrogen propulsion retrofits with a practical engineering approach.
-        </p>
       </div>
-    </section>
+    </div>
 
-    <!-- Platforms -->
-    <section id="platforms" class="section section-muted">
-      <div class="container">
-        <h2>Platforms</h2>
+  </section>
 
-        <div class="cards">
-          <article class="card">
-            <h3>H₂Rotor</h3>
-            <p>Hydrogen retrofit platform for rotorcraft propulsion systems.</p>
-          </article>
+  <!-- NOW the page will scroll because we have sections below -->
 
-          <article class="card">
-            <h3>H₂Vessel</h3>
-            <p>Hydrogen retrofit platform for marine propulsion and auxiliary power.</p>
-          </article>
-        </div>
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Why Work With Us</h2>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Platforms</div></div>
+        <div class="stat"><div class="stat-num">MVP</div><div class="stat-label">Test & validation</div></div>
+        <div class="stat"><div class="stat-num">H₂</div><div class="stat-label">Retrofit-first</div></div>
       </div>
-    </section>
 
-    <!-- Services -->
-    <section id="services" class="section">
-      <div class="container">
-        <h2>We can assist you with</h2>
+      <p class="lead">
+        We help partners evaluate feasibility, integration, and validation pathways for hydrogen propulsion retrofits.
+      </p>
+    </div>
+  </section>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Integration & Controls</h3>
-            <p>Controller architecture, digital interfaces, PLC/embedded prototyping, instrumentation and commissioning.</p>
-          </article>
-
-          <article class="card">
-            <h3>Test & Validation</h3>
-            <p>Prototype test planning, measurement, sensitivity testing, and performance characterization.</p>
-          </article>
-
-          <article class="card">
-            <h3>Feasibility & Techno-economic</h3>
-            <p>Mass/energy budgeting, efficiency analysis, and practical pathways to early deployments.</p>
-          </article>
-        </div>
+  <section id="platforms" class="section section-muted">
+    <div class="container">
+      <h2>Platforms</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>H₂Rotor</h3>
+          <p>Hydrogen retrofit platform for rotorcraft propulsion systems.</p>
+        </article>
+        <article class="card">
+          <h3>H₂Vessel</h3>
+          <p>Hydrogen retrofit platform for marine propulsion and auxiliary power.</p>
+        </article>
+        <article class="card">
+          <h3>Controls & Integration</h3>
+          <p>Digital interfaces, controllers, instrumentation, and commissioning.</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Select projects -->
-    <section id="projects" class="section section-muted">
-      <div class="container">
-        <h2>Select Projects</h2>
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="cards">
+        <article class="card"><h3>System Integration</h3><p>Mechanical and controls integration support for prototypes and retrofit kits.</p></article>
+        <article class="card"><h3>Testing & Validation</h3><p>Sensitivity testing, measurement planning, and performance characterization.</p></article>
+        <article class="card"><h3>Feasibility</h3><p>Mass/energy budgeting, efficiency analysis, and deployment pathways.</p></article>
+      </div>
+    </div>
+  </section>
 
-        <div class="list">
-          <a class="list-item" href="#">
-            <span class="list-title">H₂Rotor Proof of Concept</span>
-            <span class="list-meta">MVP test stand + sensitivity analysis</span>
-          </a>
-          <a class="list-item" href="#">
-            <span class="list-title">H₂Vessel Export Planning</span>
-            <span class="list-meta">Early partner engagement + LOIs</span>
-          </a>
-          <a class="list-item" href="#">
-            <span class="list-title">Controls & Interface Lab</span>
-            <span class="list-meta">Digital interface PCB + PLC-based controller</span>
-          </a>
+  <section id="projects" class="section section-muted">
+    <div class="container">
+      <h2>Select Projects</h2>
+      <div class="list">
+        <div class="list-item"><span class="list-title">H₂Rotor Proof of Concept</span><span class="list-meta">MVP + sensitivity analysis</span></div>
+        <div class="list-item"><span class="list-title">H₂Vessel Partnerships</span><span class="list-meta">Early LOIs and export planning</span></div>
+        <div class="list-item"><span class="list-title">Controls Lab</span><span class="list-meta">PCB interface + PLC controller</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@pazhpowertrain.com</div>
+        </div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Calgary, Alberta, Canada</div>
         </div>
       </div>
-    </section>
-
-    <!-- News -->
-    <section id="news" class="section">
-      <div class="container">
-        <h2>Latest News</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Project milestone update</h3>
-            <p>Short update describing the latest progress and next step.</p>
-          </article>
-
-          <article class="card">
-            <h3>Partner highlight</h3>
-            <p>One paragraph about a collaboration, facility, or lab capability.</p>
-          </article>
-
-          <article class="card">
-            <h3>Event or announcement</h3>
-            <p>Upcoming demo, talk, or application deadline.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section section-muted">
-      <div class="container">
-        <h2>Contact</h2>
-        <div class="contact">
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value">info@pazhpowertrain.com</div>
-          </div>
-          <div>
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Calgary, Alberta, Canada</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container">
