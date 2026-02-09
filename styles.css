@@ -171,21 +171,35 @@ body {
 }
 
 .partners-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
+  overflow: hidden;                 
+  position: relative;
+  width: 100%;
+  padding: 18px 0;                  
 }
 
 .partners-logos img {
-  height: 120px;          /* ✅ bigger logos */
+  height: 120px;          
   width: auto;
-  max-width: 260px;       /* keeps them clean */
+  max-width: 260px;       
   object-fit: contain;
   opacity: 0.95;
   filter: grayscale(10%);
 }
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 120px;                       
+  width: max-content;
+  animation: partnersMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes partnersMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 
 /* Sections */
 .section { padding: 84px 0; }
