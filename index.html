@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- cache-buster so you ALWAYS see changes -->
-  <link rel="stylesheet" href="styles.css?v=20260208_video1" />
+  <!-- cache-buster so you always see updates -->
+  <link rel="stylesheet" href="styles.css?v=20260208_final1" />
 </head>
 
 <body>
@@ -19,7 +19,16 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container nav">
-      <div class="brand">PAZH POWERTRAIN</div>
+      <a class="brand" href="#top" aria-label="Pazh Powertrain">
+        <img
+          class="brand-logo"
+          src="assets/company-logo.png"
+          alt="Pazh Powertrain logo"
+          onerror="this.style.display='none';"
+        />
+        <span class="brand-text">PAZH POWERTRAIN</span>
+      </a>
+
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#platforms">Platforms</a>
@@ -30,66 +39,63 @@
     </div>
   </header>
 
-  <!-- HERO with LIVE BLUR VIDEO -->
-  <section class="hero">
-    <!-- Put your video in assets/hero.mp4 -->
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <!-- Live blurred video -->
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
-
     <div class="hero-overlay"></div>
 
     <div class="container hero-inner">
       <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
+
       <p class="hero-sub">
         Hydrogen retrofit platforms for aviation and marine propulsion—practical engineering, integration, and validation.
       </p>
 
-      <div class="platform-row">
-        <div class="platform-card">
+      <!-- Platform tiles (clickable) -->
+      <div id="platforms" class="platform-row">
+        <a class="platform-card" href="h2rotor.html">
           <div class="platform-title">H₂Rotor</div>
           <div class="platform-sub">Rotorcraft retrofit platform</div>
-        </div>
+        </a>
 
-        <div class="platform-card">
+        <a class="platform-card" href="h2vessel.html">
           <div class="platform-title">H₂Vessel</div>
           <div class="platform-sub">Marine propulsion retrofit platform</div>
-        </div>
+        </a>
       </div>
     </div>
-
-    <!-- SMALLER ribbon -->
-    <div class="partners-ribbon" aria-label="Partners">
-      <div class="container">
-        <div class="ribbon">
-          <div class="ribbon-track">
-            <div class="ribbon-set">
-              <img src="assets/Logo1.png" alt="Partner logo">
-              <img src="assets/Logo1.png" alt="Partner logo">
-              <img src="assets/Logo1.png" alt="Partner logo">
-              <img src="assets/Logo1.png" alt="Partner logo">
-            </div>
-            <div class="ribbon-set" aria-hidden="true">
-              <img src="assets/Logo1.png" alt="">
-              <img src="assets/Logo1.png" alt="">
-              <img src="assets/Logo1.png" alt="">
-              <img src="assets/Logo1.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </section>
 
-  <!-- NOW the page will scroll because we have sections below -->
+  <!-- Partners section (like your screenshot) -->
+  <section class="partners">
+    <div class="container">
+      <h2 class="partners-title">Our Partners</h2>
 
+      <div class="partners-logos" aria-label="Partner logos">
+        <!-- Put partner logos in: assets/ribbon/
+             Then add ONE line per logo here.
+             Examples below use your existing file "Logo1.png".
+        -->
+        <img src="assets/ribbon/Logo1.png" alt="Partner logo">
+        <!-- Add more, like:
+        <img src="assets/ribbon/InnovateCalgary.png" alt="Innovate Calgary">
+        <img src="assets/ribbon/InnoTechAlberta.png" alt="InnoTech Alberta">
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Content sections (scroll works) -->
   <section id="about" class="section">
     <div class="container">
       <h2>Why Work With Us</h2>
+
       <div class="stats">
         <div class="stat"><div class="stat-num">2</div><div class="stat-label">Platforms</div></div>
-        <div class="stat"><div class="stat-num">MVP</div><div class="stat-label">Test & validation</div></div>
+        <div class="stat"><div class="stat-num">MVP</div><div class="stat-label">Testing & validation</div></div>
         <div class="stat"><div class="stat-num">H₂</div><div class="stat-label">Retrofit-first</div></div>
       </div>
 
@@ -99,27 +105,7 @@
     </div>
   </section>
 
-  <section id="platforms" class="section section-muted">
-    <div class="container">
-      <h2>Platforms</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>H₂Rotor</h3>
-          <p>Hydrogen retrofit platform for rotorcraft propulsion systems.</p>
-        </article>
-        <article class="card">
-          <h3>H₂Vessel</h3>
-          <p>Hydrogen retrofit platform for marine propulsion and auxiliary power.</p>
-        </article>
-        <article class="card">
-          <h3>Controls & Integration</h3>
-          <p>Digital interfaces, controllers, instrumentation, and commissioning.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section">
+  <section id="services" class="section section-muted">
     <div class="container">
       <h2>Services</h2>
       <div class="cards">
@@ -130,7 +116,7 @@
     </div>
   </section>
 
-  <section id="projects" class="section section-muted">
+  <section id="projects" class="section">
     <div class="container">
       <h2>Select Projects</h2>
       <div class="list">
@@ -141,7 +127,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section section-muted">
     <div class="container">
       <h2>Contact</h2>
       <div class="contact">
