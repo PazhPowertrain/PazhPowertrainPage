@@ -1,85 +1,65 @@
-/* ===============================
-   BASE
-   =============================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 
 body {
   font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #ffffff;
+  color: #fff;
   background: #000;
 }
 
-/* ===============================
-   HERO
-   =============================== */
 .hero {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url("/PazhPowertrainPage/assets/MainPageBackGround.jpg?v=5");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("/PazhPowertrainPage/assets/MainPageBackGround.jpg?v=6") center/cover no-repeat;
   overflow: hidden;
 }
 
-/* overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.48);
+  background: rgba(0,0,0,0.42);
   z-index: 1;
 }
 
-/* ===============================
-   CONTENT
-   =============================== */
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 2;
   height: 100%;
-  width: 100%;
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 0 22px;
+  padding: 0 24px;
 }
 
-.hero-content h1 {
-  font-size: clamp(38px, 5.2vw, 86px);
+.hero-title {
+  font-size: clamp(40px, 5.3vw, 92px);
   font-weight: 800;
   letter-spacing: 0.01em;
-  line-height: 0.96;
+  line-height: 0.95;
   text-transform: uppercase;
   text-shadow: 0 18px 45px rgba(0,0,0,0.35);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* ===============================
-   TWO BIG RECTANGLES (clean)
-   =============================== */
 .platform-row {
-  width: min(900px, calc(100% - 36px));
+  width: min(920px, calc(100% - 40px));
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-
-  /* subtle “behind” feeling: they sit under the headline block visually */
-  margin-top: 4px;
 }
 
 .platform-card {
-  background: rgba(10,10,10,0.55);
+  background: rgba(12,12,12,0.55);
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: 18px;
   padding: 18px 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 16px 45px rgba(0,0,0,0.30);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
 }
 
 .platform-title {
-  font-size: 18px;     /* small + beautiful (your request) */
+  font-size: 18px;     /* small + beautiful */
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -91,62 +71,47 @@ body {
   opacity: 0.82;
 }
 
-/* Mobile */
 @media (max-width: 860px) {
-  .hero-content h1 {
-    font-size: clamp(34px, 7vw, 58px);
-    line-height: 1.02;
-  }
-  .platform-row {
-    grid-template-columns: 1fr;
-    width: min(560px, calc(100% - 36px));
-  }
+  .platform-row { grid-template-columns: 1fr; width: min(560px, calc(100% - 40px)); }
+  .hero-title { font-size: clamp(34px, 7.2vw, 60px); line-height: 1.02; }
 }
 
-/* ===============================
-   THICK WHITE LOGO RIBBON (readable)
-   =============================== */
+/* THICK WHITE RIBBON */
 .logo-ribbon {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 36px; /* gap from bottom */
-  width: min(1150px, calc(100% - 36px));
+  bottom: 40px; /* gap from bottom */
+  width: min(1180px, calc(100% - 40px));
   z-index: 3;
 
-  background: rgba(255,255,255,0.94);
-  border-radius: 16px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 22px 55px rgba(0,0,0,0.28);
-
-  /* make it thicker */
-  padding: 10px 0;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
 }
 
 .logo-track {
   display: flex;
   width: max-content;
-  animation: ribbon-scroll 26s linear infinite;
+  animation: ribbon-scroll 22s linear infinite;
 }
 
 .logo-set {
   display: flex;
   align-items: center;
-  gap: 60px;          /* more breathing room */
-  padding: 16px 34px; /* thicker ribbon height */
+  gap: 70px;
+  padding: 22px 40px;  /* thicker ribbon */
 }
 
 .logo-set img {
-  height: 44px;       /* bigger logos */
+  height: 52px;        /* bigger logos */
   width: auto;
   object-fit: contain;
-  opacity: 0.96;
-  filter: none;
+  opacity: 0.95;
 }
 
-.logo-ribbon:hover .logo-track {
-  animation-play-state: paused;
-}
+.logo-ribbon:hover .logo-track { animation-play-state: paused; }
 
 @keyframes ribbon-scroll {
   from { transform: translateX(0); }
