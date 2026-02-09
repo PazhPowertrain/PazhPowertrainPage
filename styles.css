@@ -179,8 +179,9 @@ body {
 }
 
 .partners-logos img {
-  height: 54px;     /* adjust up/down */
+  height: 120px;          /* ✅ bigger logos */
   width: auto;
+  max-width: 260px;       /* keeps them clean */
   object-fit: contain;
   opacity: 0.95;
   filter: grayscale(10%);
