@@ -156,7 +156,7 @@ body {
   opacity: 0.88;
 }
 
-/* Partners section (like your screenshot) */
+/* Partners */
 .partners {
   padding: 64px 0 72px;
   background: #fff;
@@ -170,28 +170,24 @@ body {
   margin-bottom: 26px;
 }
 
-.partners-logos {
-  overflow: hidden;                 
-  position: relative;
+/* the ribbon container */
+.partners-ribbon {
   width: 100%;
-  padding: 18px 0;                  
+  overflow: hidden;
+  padding: 18px 0;
 }
 
-.partners-logos img {
-  height: 120px;          
-  width: auto;
-  max-width: 260px;       
-  object-fit: contain;
-  opacity: 0.95;
-  filter: grayscale(10%);
-}
-
+/* track (logos row) */
 .partners-track {
   display: flex;
   align-items: center;
-  gap: 120px;                       
+  gap: 96px;
   width: max-content;
-  animation: partnersMarquee 28s linear infinite;
+}
+
+/* only animate once JS duplicates the logos */
+.partners-track.is-animated {
+  animation: partnersMarquee 22s linear infinite;
   will-change: transform;
 }
 
@@ -200,6 +196,14 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+.partners-track img {
+  height: 90px;          /* logo size */
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  opacity: 0.95;
+  filter: grayscale(10%);
+}
 
 /* Sections */
 .section { padding: 84px 0; }
@@ -300,6 +304,9 @@ body {
   .contact { grid-template-columns: 1fr; }
   .platform-row { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 760px) {
   .nav-links { display: none; }
+  .partners-track img { height: 64px; }
+  .partners-track { gap: 56px; }
 }
