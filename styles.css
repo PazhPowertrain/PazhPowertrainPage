@@ -1,77 +1,88 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* =========================
+   Base
+========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-  font-family: "Inter", sans-serif;
-  background: #fff;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #111;
+  background: #fff;
 }
 
 .container {
-  width: min(1200px, 92%);
+  width: min(1180px, calc(100% - 44px));
   margin: 0 auto;
 }
 
-/* HEADER */
+/* =========================
+   Header
+========================= */
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.9);
+  z-index: 50;
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ddd;
-  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .nav {
-  height: 70px;
+  height: 68px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: #111;
 }
 
 .brand-logo {
-  height: 30px;
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .brand-text {
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   font-size: 13px;
 }
 
 .nav-links {
   display: flex;
   gap: 18px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-weight: 600;
   color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.85;
 }
+.nav-links a:hover { opacity: 1; }
 
 .btn {
-  border: 1px solid #ccc;
-  padding: 8px 14px;
+  padding: 10px 14px;
   border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.14);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   position: relative;
-  min-height: 80vh;
-  overflow: hidden;
+  min-height: 78vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero-video {
@@ -80,52 +91,63 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(10px);
-  transform: scale(1.1);
+  filter: blur(10px) saturate(1.08);
+  transform: scale(1.08);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.40);
 }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  color: white;
-  padding: 90px 0;
+  padding: 92px 0 70px;
+  color: #fff;
 }
 
 .hero h1 {
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(36px, 4.6vw, 62px);
   font-weight: 800;
   line-height: 1.05;
+  letter-spacing: 0.01em;
+  max-width: 20ch;
 }
 
 .hero-sub {
-  margin-top: 16px;
-  max-width: 600px;
+  margin-top: 14px;
   font-size: 15px;
-  opacity: 0.9;
+  max-width: 72ch;
+  opacity: 0.92;
+  line-height: 1.65;
 }
 
-/* PLATFORM CARDS */
+/* Platform tiles */
 .platform-row {
   margin-top: 28px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  max-width: 860px;
+  width: min(860px, 100%);
 }
 
 .platform-card {
-  background: rgba(0,0,0,0.4);
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0,0,0,0.40);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 14px;
   padding: 16px 18px;
-  color: white;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.48);
 }
 
 .platform-title {
@@ -136,30 +158,34 @@ body {
 }
 
 .platform-sub {
-  font-size: 13px;
   margin-top: 6px;
-  opacity: 0.85;
+  font-size: 13px;
+  opacity: 0.88;
 }
 
-/* PARTNERS */
+/* =========================
+   Partners (looping ribbon)
+========================= */
 .partners {
-  padding: 70px 0;
+  padding: 64px 0 40px;
+  background: #fff;
 }
 
 .partners-title {
   text-align: center;
   font-size: 34px;
   font-weight: 800;
-  margin-bottom: 30px;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
 }
 
+/* Ribbon container */
 .partners-logos {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 28px 0;
+  padding: 22px 0;
 
-  /* soft professional background */
   background: linear-gradient(
     90deg,
     #f7f9fb 0%,
@@ -167,13 +193,17 @@ body {
     #ffffff 85%,
     #f7f9fb 100%
   );
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
+
+/* Fade edges */
 .partners-logos::before,
 .partners-logos::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 120px;
+  width: 140px;
   height: 100%;
   z-index: 2;
   pointer-events: none;
@@ -181,50 +211,147 @@ body {
 
 .partners-logos::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, #f7f9fb, transparent);
 }
 
 .partners-logos::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, #f7f9fb, transparent);
 }
 
+/* Moving track
+   NOTE: JS sets --marquee-distance based on content width */
 .partners-track {
   display: flex;
-  gap: 140px;
   align-items: center;
+  gap: 140px;
   width: max-content;
-  animation: marquee 22s linear infinite;
+
+  animation: partnersMarquee 22s linear infinite;
   will-change: transform;
 }
 
+@keyframes partnersMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--marquee-distance, 50%))); }
+}
 
+/* Logo sizing */
 .partners-track img {
-  height: 120px;
+  height: 90px;     /* increase if you want bigger logos */
   width: auto;
   object-fit: contain;
+
+  opacity: 0.95;
+  filter: grayscale(10%);
 }
 
-/* marquee animation */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+/* =========================
+   Sections
+========================= */
+.section { padding: 84px 0; }
+.section-muted { background: #f6f7f8; }
+
+.section h2 {
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
 }
 
-/* FOOTER */
+.lead {
+  margin-top: 16px;
+  max-width: 80ch;
+  color: rgba(0,0,0,0.75);
+  line-height: 1.7;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.stat-num { font-size: 28px; font-weight: 800; }
+.stat-label { margin-top: 6px; color: rgba(0,0,0,0.7); font-size: 14px; }
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+}
+
+.card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.card p { color: rgba(0,0,0,0.72); line-height: 1.7; font-size: 14px; }
+
+/* List */
+.list { margin-top: 22px; display: grid; gap: 10px; }
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.list-title { font-weight: 800; }
+.list-meta { color: rgba(0,0,0,0.65); }
+
+/* Contact */
+.contact {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.contact-label {
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.contact-value { margin-top: 6px; font-weight: 700; }
+
+/* Footer */
 .footer {
+  border-top: 1px solid rgba(0,0,0,0.08);
   padding: 24px 0;
-  border-top: 1px solid #eee;
+  color: rgba(0,0,0,0.65);
   font-size: 13px;
-  color: #666;
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
-  .platform-row {
-    grid-template-columns: 1fr;
-  }
-  .nav-links {
-    display: none;
-  }
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 980px) {
+  .cards { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .platform-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .partners-track { gap: 90px; }
+  .partners-track img { height: 72px; }
 }
