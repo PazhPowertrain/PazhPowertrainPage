@@ -124,7 +124,9 @@ body {
   line-height: 1.65;
 }
 
-/* Platform tiles */
+/* =========================
+   Platforms
+========================= */
 .platform-row {
   margin-top: 28px;
   display: grid;
@@ -164,10 +166,10 @@ body {
 }
 
 /* =========================
-   Partners (looping ribbon)
+   Partners (TRUE infinite ribbon)
 ========================= */
 .partners {
-  padding: 64px 0 40px;
+  padding: 64px 0 18px;
   background: #fff;
 }
 
@@ -179,25 +181,18 @@ body {
   margin-bottom: 18px;
 }
 
-/* Ribbon container */
 .partners-logos {
   position: relative;
   overflow: hidden;
   width: 100%;
   padding: 22px 0;
 
-  background: linear-gradient(
-    90deg,
-    #f7f9fb 0%,
-    #ffffff 15%,
-    #ffffff 85%,
-    #f7f9fb 100%
-  );
+  background: linear-gradient(90deg, #f7f9fb 0%, #ffffff 15%, #ffffff 85%, #f7f9fb 100%);
   border-top: 1px solid rgba(0,0,0,0.06);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Fade edges */
+/* Edge fades */
 .partners-logos::before,
 .partners-logos::after {
   content: "";
@@ -219,27 +214,18 @@ body {
   background: linear-gradient(to left, #f7f9fb, transparent);
 }
 
-/* Moving track
-   NOTE: JS sets --marquee-distance based on content width */
 .partners-track {
   display: flex;
   align-items: center;
   gap: 140px;
   width: max-content;
-
-  animation: partnersMarquee 22s linear infinite;
   will-change: transform;
 }
 
-@keyframes partnersMarquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-1 * var(--marquee-distance, 50%))); }
-}
-
-/* Logo sizing */
 .partners-track img {
-  height: 90px;     /* increase if you want bigger logos */
+  height: 96px;            /* logo size knob */
   width: auto;
+  max-width: 260px;
   object-fit: contain;
 
   opacity: 0.95;
@@ -247,82 +233,26 @@ body {
 }
 
 /* =========================
-   Sections
+   Contact + Footer
 ========================= */
-.section { padding: 84px 0; }
-.section-muted { background: #f6f7f8; }
+.contact-section {
+  padding: 64px 0;
+  background: #fff;
+}
 
-.section h2 {
-  font-size: 34px;
+.contact-title {
+  font-size: 30px;
+  font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 18px;
 }
 
-.lead {
-  margin-top: 16px;
-  max-width: 80ch;
-  color: rgba(0,0,0,0.75);
-  line-height: 1.7;
-}
-
-/* Stats */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.stat {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 14px;
-  padding: 18px;
-}
-
-.stat-num { font-size: 28px; font-weight: 800; }
-.stat-label { margin-top: 6px; color: rgba(0,0,0,0.7); font-size: 14px; }
-
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 22px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
-}
-
-.card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
-.card p { color: rgba(0,0,0,0.72); line-height: 1.7; font-size: 14px; }
-
-/* List */
-.list { margin-top: 22px; display: grid; gap: 10px; }
-.list-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 16px;
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-.list-title { font-weight: 800; }
-.list-meta { color: rgba(0,0,0,0.65); }
-
-/* Contact */
-.contact {
-  margin-top: 18px;
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
+
 .contact-label {
   font-size: 12px;
   color: rgba(0,0,0,0.6);
@@ -330,9 +260,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
 .contact-value { margin-top: 6px; font-weight: 700; }
 
-/* Footer */
 .footer {
   border-top: 1px solid rgba(0,0,0,0.08);
   padding: 24px 0;
@@ -344,10 +274,8 @@ body {
    Responsive
 ========================= */
 @media (max-width: 980px) {
-  .cards { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: 1fr; }
-  .contact { grid-template-columns: 1fr; }
   .platform-row { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
