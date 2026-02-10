@@ -4,87 +4,191 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pazh Powertrain</title>
+  <meta name="description" content="Hydrogen retrofit propulsion systems for hard-to-electrify applications." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- optional cache buster -->
+  <link rel="stylesheet" href="styles.css?v=20260209_final" />
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container nav">
-    <div class="brand">
-      <img src="assets/company-logo.png" class="brand-logo" alt="Pazh Powertrain">
-      <span class="brand-text">PAZH POWERTRAIN</span>
-    </div>
-
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#platforms">Platforms</a>
-      <a href="#contact" class="btn">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="assets/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-inner">
-    <h1>
-      DECARBONIZING<br>
-      HARD-TO-ELECTRIFY<br>
-      PROPULSION
-    </h1>
-
-    <p class="hero-sub">
-      Hydrogen retrofit platforms for aviation and marine propulsion.
-    </p>
-
-    <div id="platforms" class="platform-row">
-      <a class="platform-card" href="h2rotor.html">
-        <div class="platform-title">H₂Rotor</div>
-        <div class="platform-sub">Rotorcraft retrofit platform</div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Pazh Powertrain">
+        <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo"
+             onerror="this.style.display='none';" />
+        <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
 
-      <a class="platform-card" href="h2vessel.html">
-        <div class="platform-title">H₂Vessel</div>
-        <div class="platform-sub">Marine propulsion retrofit platform</div>
-      </a>
+      <nav class="nav-links">
+        <a href="#platforms">Platforms</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- PARTNERS -->
-<section class="partners">
-  <div class="container">
-    <h2 class="partners-title">Our Partners</h2>
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <!-- Live blurred video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
 
-    <div class="partners-logos">
-      <div class="partners-track">
-        <!-- EACH LOGO ONLY ONCE -->
-        <img src="assets/ribbon/Logo1.png" alt="Partner 1">
-        <img src="assets/ribbon/Logo2.png" alt="Partner 2">
-        <img src="assets/ribbon/Logo3.png" alt="Partner 3">
-        <img src="assets/ribbon/Logo4.png" alt="Partner 4">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <h1>DECARBONIZING<br>HARD-TO-ELECTRIFY<br>PROPULSION</h1>
+
+      <p class="hero-sub">
+        Hydrogen retrofit platforms for aviation and marine propulsion—practical engineering, integration, and validation.
+      </p>
+
+      <!-- Platform tiles -->
+      <div id="platforms" class="platform-row">
+        <a class="platform-card" href="h2rotor.html">
+          <div class="platform-title">H₂Rotor</div>
+          <div class="platform-sub">Rotorcraft retrofit platform</div>
+        </a>
+
+        <a class="platform-card" href="h2vessel.html">
+          <div class="platform-title">H₂Vessel</div>
+          <div class="platform-sub">Marine propulsion retrofit platform</div>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    © 2026 Pazh Powertrain
-  </div>
-</footer>
+  <!-- PARTNERS -->
+  <section class="partners" aria-label="Our partners">
+    <div class="container">
+      <h2 class="partners-title">Our Partners</h2>
+    </div>
+
+    <!-- Full-width ribbon (outside container on purpose) -->
+    <div class="partners-logos" aria-label="Partner logos">
+      <div class="partners-track" id="partnersTrack">
+        <!-- PUT EACH LOGO ONLY ONCE -->
+        <img src="assets/ribbon/Logo1.png" alt="Partner logo 1">
+        <img src="assets/ribbon/Logo2.png" alt="Partner logo 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (simple placeholder so menu works) -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="contact-title">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@pazhpowertrain.com</div>
+        </div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Calgary, Alberta, Canada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Pazh Powertrain. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ===========================================================
+       TRUE INFINITE MARQUEE (NO GAPS, NO SUDDEN DISAPPEAR)
+       - You list each logo ONCE
+       - Script clones enough logos to fill width
+       - Animates by exact pixel distance
+    =========================================================== */
+    (function () {
+      const track = document.getElementById("partnersTrack");
+      if (!track) return;
+
+      const ribbon = track.closest(".partners-logos");
+      let anim = null;
+
+      function decodeImages(imgs) {
+        // Wait for images to load/ decode so widths are accurate
+        return Promise.all(
+          imgs.map(img => (img.decode ? img.decode().catch(() => {}) : Promise.resolve()))
+        );
+      }
+
+      function clearClones() {
+        const originals = Array.from(track.children).filter(el => !el.dataset.clone);
+        track.innerHTML = "";
+        originals.forEach(el => track.appendChild(el));
+        return originals;
+      }
+
+      async function buildMarquee() {
+        if (anim) { anim.cancel(); anim = null; }
+
+        const originals = clearClones();
+        if (originals.length === 0) return;
+
+        // Ensure at least 2 logos to look continuous
+        if (originals.length === 1) {
+          const clone = originals[0].cloneNode(true);
+          clone.dataset.clone = "1";
+          track.appendChild(clone);
+        }
+
+        const imgs = Array.from(track.querySelectorAll("img"));
+        await decodeImages(imgs);
+
+        // Width of one "base set"
+        const baseSetWidth = track.scrollWidth;
+
+        // Clone enough sets so the ribbon is ALWAYS filled (no blank space)
+        const minNeeded = ribbon.clientWidth * 2;
+        while (track.scrollWidth < minNeeded) {
+          originals.forEach(el => {
+            const c = el.cloneNode(true);
+            c.dataset.clone = "1";
+            track.appendChild(c);
+          });
+        }
+
+        // Add one more full set to guarantee seamless wrap
+        originals.forEach(el => {
+          const c = el.cloneNode(true);
+          c.dataset.clone = "1";
+          track.appendChild(c);
+        });
+
+        // Animate by EXACT base set width
+        const pxPerSecond = 90;                 // speed knob (bigger = faster)
+        const duration = (baseSetWidth / pxPerSecond) * 1000;
+
+        anim = track.animate(
+          [
+            { transform: "translateX(0)" },
+            { transform: `translateX(-${baseSetWidth}px)` }
+          ],
+          { duration, iterations: Infinity, easing: "linear" }
+        );
+      }
+
+      // Init + resize
+      buildMarquee();
+      window.addEventListener("resize", () => {
+        clearTimeout(window.__pazhMarqueeResize);
+        window.__pazhMarqueeResize = setTimeout(buildMarquee, 150);
+      });
+    })();
+  </script>
 
 </body>
 </html>
