@@ -2,12 +2,9 @@
    Industries Page
 ========================================= */
 
-.industries-hero {
+.industries-hero,
+.scroll-panel {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
   background-image: url("../assets/BackGround-Industries.jpg");
   background-size: cover;
   background-position: center center;
@@ -15,14 +12,21 @@
   background-attachment: fixed;
 }
 
+.industries-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
 .industries-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.45) 45%,
-    rgba(0, 0, 0, 0.55) 100%
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.22) 45%,
+    rgba(0, 0, 0, 0.28) 100%
   );
   z-index: 1;
 }
@@ -69,23 +73,18 @@
 }
 
 .scroll-panel {
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
-  background-image: url("../assets/BackGround-Industries.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .scroll-panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 12, 18, 0);
+  background: rgba(7, 12, 18, 0.10);
+  z-index: 0;
 }
 
 .panel-grid,
@@ -110,11 +109,11 @@
   max-width: 560px;
   padding: 40px 38px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
   color: #fff;
 }
 
@@ -148,13 +147,13 @@
   border-radius: 999px;
   text-decoration: none;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   transition: all 0.25s ease;
 }
 
 .page-btn:hover {
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================
@@ -180,10 +179,7 @@
 ========================================= */
 
 @media (max-width: 991px) {
-  .industries-hero {
-    background-attachment: scroll;
-  }
-
+  .industries-hero,
   .scroll-panel {
     background-attachment: scroll;
   }
@@ -201,10 +197,7 @@
     padding: 120px 0 80px;
   }
 
-  .industries-hero h1 {
-    max-width: 100%;
-  }
-
+  .industries-hero h1,
   .hero-text {
     max-width: 100%;
   }
