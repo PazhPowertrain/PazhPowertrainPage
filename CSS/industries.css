@@ -1,1 +1,225 @@
+/* =========================================
+   Industries Page
+========================================= */
 
+.industries-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("../assets/BackGround-Industries.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.industries-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+.industries-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1320px, calc(100% - 56px));
+  margin: 0 auto;
+  color: #fff;
+  padding: 140px 0 100px;
+}
+
+.eyebrow {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.industries-hero h1 {
+  max-width: 820px;
+  font-size: clamp(2.6rem, 5vw, 5.2rem);
+  line-height: 1.05;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  max-width: 700px;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================================
+   Content Sections
+========================================= */
+
+.industries-content {
+  position: relative;
+  background: #0c1117;
+}
+
+.scroll-panel {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background-image: url("../assets/BackGround-Industries.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.scroll-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 12, 18, 0.62);
+}
+
+.panel-grid,
+.center-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.panel-spacer {
+  min-height: 1px;
+}
+
+.panel-card {
+  max-width: 560px;
+  padding: 40px 38px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  color: #fff;
+}
+
+.panel-card h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.panel-card p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.center-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel-card.large {
+  max-width: 760px;
+  text-align: center;
+}
+
+.page-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: all 0.25s ease;
+}
+
+.page-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   Scroll Animation
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 991px) {
+  .industries-hero {
+    background-attachment: scroll;
+  }
+
+  .scroll-panel {
+    background-attachment: scroll;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .panel-card {
+    max-width: 100%;
+  }
+
+  .industries-hero-inner {
+    padding: 120px 0 80px;
+  }
+
+  .industries-hero h1 {
+    max-width: 100%;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-hero-inner {
+    width: min(100% - 32px, 1320px);
+  }
+
+  .panel-card {
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+
+  .panel-card h2 {
+    margin-bottom: 14px;
+  }
+}
