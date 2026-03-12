@@ -1,219 +1,132 @@
-/* =========================================
-   Industries Page
-========================================= */
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industries | Pazh Powertrain</title>
+  <meta
+    name="description"
+    content="Hydrogen retrofit solutions for industrial energy systems, distributed power, and modular decarbonization pathways."
+  />
 
-.industries-hero,
-.scroll-panel {
-  position: relative;
-  background-image: url("../assets/BackGround-Industries.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-.industries-hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="CSS/industries.css" />
+</head>
 
-.industries-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.28) 100%
-  );
-  z-index: 1;
-}
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Pazh Powertrain home">
+        <img src="assets/Pazh-Logo.png" alt="Pazh Powertrain logo" class="brand-mark" />
+        <span class="brand-text">PAZH POWERTRAIN</span>
+      </a>
 
-.industries-hero-inner {
-  position: relative;
-  z-index: 2;
-  width: min(1320px, calc(100% - 56px));
-  margin: 0 auto;
-  color: #fff;
-  padding: 140px 0 100px;
-}
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="industries.html" class="active">Industries</a>
+        <a href="technology.html">Technology</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="contact-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-.eyebrow {
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  opacity: 0.9;
-}
+  <main>
+    <!-- Hero -->
+    <section class="industries-hero">
+      <div class="industries-overlay"></div>
 
-.industries-hero h1 {
-  max-width: 820px;
-  font-size: clamp(2.6rem, 5vw, 5.2rem);
-  line-height: 1.05;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+      <div class="industries-hero-inner">
+        <p class="eyebrow reveal">Industrial Applications</p>
 
-.hero-text {
-  max-width: 700px;
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.92);
-}
+        <h1 class="reveal">
+          Hydrogen Retrofit
+          Solutions for
+          Industrial Energy
+          Systems
+        </h1>
 
-/* =========================================
-   Content Sections
-========================================= */
+        <p class="hero-text reveal">
+          Pazh Powertrain develops retrofit-oriented solutions for distributed power,
+          cleaner combustion pathways, and modular upgrade strategies for legacy
+          industrial equipment.
+        </p>
+      </div>
+    </section>
 
-.industries-content {
-  position: relative;
-  background: transparent;
-}
+    <!-- Content -->
+    <section class="industries-content">
+      <div class="scroll-panel">
+        <div class="container panel-grid">
+          <div class="panel-spacer"></div>
 
-.scroll-panel {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 0;
-}
+          <article class="panel-card reveal">
+            <h2>Distributed Power</h2>
+            <p>
+              Our retrofit strategy supports decentralized and modular power generation
+              concepts for sites that require resilient, scalable, and lower-emission
+              energy systems. This includes pathways for integrating hydrogen-based
+              combustion upgrades into existing industrial platforms.
+            </p>
+          </article>
+        </div>
+      </div>
 
-.scroll-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(7, 12, 18, 0.10);
-  z-index: 0;
-}
+      <div class="scroll-panel">
+        <div class="container panel-grid">
+          <article class="panel-card reveal">
+            <h2>Legacy Asset Decarbonization</h2>
+            <p>
+              Rather than replacing entire systems, Pazh focuses on retrofit kits and
+              integration architecture that extend the value of legacy equipment.
+              This reduces transition cost, accelerates adoption, and creates a more
+              practical route toward industrial decarbonization.
+            </p>
+          </article>
 
-.panel-grid,
-.center-panel {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
+          <div class="panel-spacer"></div>
+        </div>
+      </div>
 
-.panel-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
+      <div class="scroll-panel">
+        <div class="container center-panel">
+          <article class="panel-card large reveal">
+            <h2>Modular Retrofit Platform</h2>
+            <p>
+              Our approach is built around practical engineering, modular subsystem
+              integration, and staged deployment. The objective is to enable cleaner
+              industrial energy systems without requiring immediate full asset
+              replacement.
+            </p>
+            <a class="page-btn" href="contact.html">Discuss an Application</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-.panel-spacer {
-  min-height: 1px;
-}
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -60px 0px"
+      }
+    );
 
-.panel-card {
-  max-width: 560px;
-  padding: 40px 38px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
-  color: #fff;
-}
-
-.panel-card h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-  line-height: 1.15;
-  margin-bottom: 18px;
-}
-
-.panel-card p {
-  font-size: 1.02rem;
-  line-height: 1.85;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.center-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.panel-card.large {
-  max-width: 760px;
-  text-align: center;
-}
-
-.page-btn {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: all 0.25s ease;
-}
-
-.page-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* =========================================
-   Scroll Animation
-========================================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition:
-    opacity 0.9s ease,
-    transform 0.9s ease;
-  will-change: transform, opacity;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================
-   Responsive
-========================================= */
-
-@media (max-width: 991px) {
-  .industries-hero,
-  .scroll-panel {
-    background-attachment: scroll;
-  }
-
-  .panel-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .panel-card {
-    max-width: 100%;
-  }
-
-  .industries-hero-inner {
-    padding: 120px 0 80px;
-  }
-
-  .industries-hero h1,
-  .hero-text {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .industries-hero-inner {
-    width: min(100% - 32px, 1320px);
-  }
-
-  .panel-card {
-    padding: 28px 22px;
-    border-radius: 18px;
-  }
-
-  .panel-card h2 {
-    margin-bottom: 14px;
-  }
-}
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
