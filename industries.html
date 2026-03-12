@@ -1,89 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Industries | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Main global stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <!-- Page-specific stylesheet -->
+  <link rel="stylesheet" href="css/industries.css" />
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Pazh Powertrain">
-        <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
-        <span class="brand-text">PAZH POWERTRAIN</span>
-      </a>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Pazh Powertrain</a>
 
-      <nav class="nav-links">
+      <nav class="main-nav">
         <a href="index.html">Home</a>
-
-        <div class="dropdown">
-          <a class="dropbtn" href="industries.html">Industries</a>
-          <div class="dropdown-content">
-            <a href="aviation.html">Aviation</a>
-            <a href="marine.html">Marine</a>
-            <a href="distributed-power.html">Distributed Power</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <a class="dropbtn" href="technology.html">Technology</a>
-          <div class="dropdown-content">
-            <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
-            <a href="integration.html">Integration Strategy</a>
-            <a href="system-components.html">System Components</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <a class="dropbtn" href="partners.html">Partners</a>
-          <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
-          </div>
-        </div>
-
-        <a href="index.html#contact" class="btn">Contact</a>
+        <a href="Industries.html" class="active">Industries</a>
+        <a href="#">Technology</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
+  <!-- Hero / Parallax Background Section -->
+  <section class="industries-hero">
+    <div class="industries-overlay"></div>
+
+    <div class="industries-hero-inner">
+      <p class="eyebrow reveal">Industrial Applications</p>
+      <h1 class="reveal">Hydrogen Retrofit Solutions for Industrial Energy Systems</h1>
+      <p class="hero-text reveal">
+        Pazh Powertrain develops retrofit-oriented solutions for distributed power,
+        cleaner combustion pathways, and modular upgrade strategies for legacy
+        industrial equipment.
       </p>
     </div>
   </section>
 
-  <section class="page-content">
-    <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
-        </p>
+  <!-- Scroll Story Sections -->
+  <main class="industries-content">
+
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-spacer"></div>
+        <div class="panel-card reveal">
+          <h2>Distributed Power Generation</h2>
+          <p>
+            Our retrofit architecture can support modular industrial power systems
+            where operators seek lower-emission solutions without fully replacing
+            their installed base.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
-    </div>
-  </footer>
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-card reveal">
+          <h2>Upgrade Instead of Replace</h2>
+          <p>
+            Rather than forcing a full asset replacement, Pazh’s concept focuses on
+            retrofit pathways that can extend system value while improving
+            sustainability and operational flexibility.
+          </p>
+        </div>
+        <div class="panel-spacer"></div>
+      </div>
+    </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-spacer"></div>
+        <div class="panel-card reveal">
+          <h2>Industrial Decarbonization Pathway</h2>
+          <p>
+            The solution is intended for sectors where reliable thermal and power
+            delivery remain critical, including remote, off-grid, and heavy-duty
+            industrial environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-panel final-panel">
+      <div class="container center-panel">
+        <div class="panel-card large reveal">
+          <h2>Built for Real-World Deployment</h2>
+          <p>
+            From modular deployment concepts to integration with legacy powertrain
+            assets, our industrial approach is focused on practical implementation,
+            staged validation, and scalable commercialization.
+          </p>
+
+          <a href="#" class="page-btn">Talk to Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/industries.js"></script>
 </body>
 </html>
