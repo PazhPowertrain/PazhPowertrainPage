@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  width: min(1180px, calc(100% - 44px));
+  width: min(1320px, calc(100% - 56px));
   margin: 0 auto;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .nav {
-  height: 68px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +55,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 8px;
   align-items: center;
 }
 
