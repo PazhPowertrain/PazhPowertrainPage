@@ -3,28 +3,407 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Industries | Pazh Powertrain </title>
+  <title>Industries | Pazh Powertrain</title>
   <meta name="description" content="Industrial applications and distributed power solutions from Pazh Powertrain." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Main site CSS -->
-  <link rel="stylesheet" href="styles.css?v=20260209_final" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.5;
+    }
 
-  <!-- Industries page CSS -->
-  <link rel="stylesheet" href="CSS/industries.css?v=20260312_final" />
+    .container {
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #111;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-text {
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links > a,
+    .dropbtn {
+      color: #111;
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(17,17,17,0.12);
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      min-width: 250px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(17,17,17,0.08);
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+      padding: 10px 0;
+      display: none;
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      color: #111;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(17,17,17,0.04);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hero */
+    .industries-hero,
+    .scroll-panel {
+      background-image: url("assets/BackGround-Industries.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .industries-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .industries-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.18) 0%,
+        rgba(0,0,0,0.22) 45%,
+        rgba(0,0,0,0.28) 100%
+      );
+      z-index: 1;
+    }
+
+    .industries-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+      color: #fff;
+      padding: 120px 0 90px;
+    }
+
+    .eyebrow {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      opacity: 0.92;
+      font-weight: 600;
+    }
+
+    .industries-hero h1 {
+      max-width: 820px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      font-size: clamp(1rem, 1.35vw, 1.16rem);
+      line-height: 1.85;
+      color: rgba(255,255,255,0.95);
+      font-weight: 500;
+    }
+
+    /* Panels */
+    .industries-content {
+      position: relative;
+      background: transparent;
+    }
+
+    .scroll-panel {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .scroll-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(7,12,18,0.08);
+      z-index: 0;
+    }
+
+    .panel-grid,
+    .center-panel {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .panel-spacer {
+      min-height: 1px;
+    }
+
+    .panel-card {
+      max-width: 580px;
+      padding: 40px 38px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.16);
+      color: #fff;
+    }
+
+    .panel-card h2 {
+      font-size: clamp(1.9rem, 2.6vw, 2.9rem);
+      line-height: 1.12;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .panel-card p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.94);
+      font-weight: 500;
+    }
+
+    .center-panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel-card.large {
+      max-width: 780px;
+      text-align: center;
+    }
+
+    .page-btn {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.34);
+      transition: all 0.25s ease;
+      font-weight: 600;
+    }
+
+    .page-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.10);
+    }
+
+    /* Contact + footer */
+    .contact-section {
+      padding: 84px 0;
+      background: #fff;
+    }
+
+    .contact-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 28px;
+      font-weight: 800;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .contact-label {
+      font-size: 0.92rem;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .contact-value {
+      font-size: 1.1rem;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      background: #fff;
+      color: #666;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(17,17,17,0.06);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      will-change: transform, opacity;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .industries-hero,
+      .scroll-panel {
+        background-attachment: scroll;
+      }
+
+      .panel-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-card {
+        max-width: 100%;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container,
+      .industries-hero-inner {
+        width: min(100% - 28px, 1280px);
+      }
+
+      .industries-hero-inner {
+        padding: 100px 0 70px;
+      }
+
+      .panel-card {
+        padding: 28px 22px;
+        border-radius: 18px;
+      }
+
+      .brand-text {
+        font-size: 0.92rem;
+      }
+
+      .btn {
+        min-height: 40px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html#top" aria-label="Pazh Powertrain">
-        <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo"
-             onerror="this.style.display='none';" />
+        <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
 
@@ -62,7 +441,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section id="top" class="industries-hero">
     <div class="industries-overlay"></div>
 
@@ -76,7 +454,6 @@
     </div>
   </section>
 
-  <!-- Content -->
   <main class="industries-content">
 
     <section class="scroll-panel">
@@ -135,7 +512,6 @@
 
   </main>
 
-  <!-- Contact -->
   <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="contact-title">Contact</h2>
@@ -158,10 +534,20 @@
     </div>
   </footer>
 
-  <script src="JS/industries.js?v=20260312_final"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.18 });
+
+    revealElements.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
