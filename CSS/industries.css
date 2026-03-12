@@ -85,7 +85,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 12, 18, 0.18);
+  background: rgba(7, 12, 18, 0);
 }
 
 .panel-grid,
