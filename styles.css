@@ -3,6 +3,7 @@
 ========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
+
 body {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #111;
@@ -20,9 +21,9 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 200;
   background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -36,42 +37,144 @@ body {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: #111;
+  flex-shrink: 0;
 }
 
 .brand-logo {
-  height: 28px;
+  height: 34px;
   width: auto;
   display: block;
 }
 
 .brand-text {
   font-weight: 800;
-  letter-spacing: 0.06em;
-  font-size: 13px;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: 8px;
+  margin-left: auto;
 }
 
-.nav-links a {
+.nav-links > a,
+.dropbtn {
   text-decoration: none;
   color: #111;
   font-weight: 600;
-  font-size: 14px;
-  opacity: 0.85;
+  font-size: 15px;
+  line-height: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background 0.16s ease, color 0.16s ease, opacity 0.16s ease;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 0.92;
 }
-.nav-links a:hover { opacity: 1; }
+
+.nav-links > a:hover,
+.dropbtn:hover {
+  background: rgba(0,0,0,0.045);
+  opacity: 1;
+}
 
 .btn {
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.14);
+  padding: 11px 18px !important;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+}
+
+/* =========================
+   Dropdown Navigation
+========================= */
+.dropdown {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+}
+
+.dropbtn {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropbtn::after {
+  content: "▾";
+  font-size: 11px;
+  margin-left: 8px;
+  opacity: 0.65;
+  transform: translateY(-1px);
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 14px;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+
+  background: #fff;
+  min-width: 240px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+
+  transition: opacity 0.18s ease, transform 0.18s ease;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 300;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-content a:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.dropdown-content a:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* =========================
@@ -172,7 +275,6 @@ body {
   opacity: 0.92;
 }
 
-
 /* =========================
    Partners (TRUE infinite ribbon)
 ========================= */
@@ -194,13 +296,11 @@ body {
   overflow: hidden;
   width: 100%;
   padding: 22px 0;
-
   background: linear-gradient(90deg, #f7f9fb 0%, #ffffff 15%, #ffffff 85%, #f7f9fb 100%);
   border-top: 1px solid rgba(0,0,0,0.06);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Edge fades */
 .partners-logos::before,
 .partners-logos::after {
   content: "";
@@ -231,11 +331,10 @@ body {
 }
 
 .partners-track img {
-  height: 96px;            /* logo size knob */
+  height: 96px;
   width: auto;
   max-width: 260px;
   object-fit: contain;
-
   opacity: 0.95;
   filter: grayscale(10%);
 }
@@ -269,7 +368,10 @@ body {
   letter-spacing: 0.06em;
 }
 
-.contact-value { margin-top: 6px; font-weight: 700; }
+.contact-value {
+  margin-top: 6px;
+  font-weight: 700;
+}
 
 .footer {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -282,87 +384,37 @@ body {
    Responsive
 ========================= */
 @media (max-width: 980px) {
-   .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
-  .nav-links { display: none; }
-  .partners-track { gap: 90px; }
-  .partners-track img { height: 72px; }
-   
-   .hero-action-wrap {
-      width: 100%;
-   }
-   
-   .hero-action-card {
-      padding: 18px 20px;
-   }
-   .hero-action-title {
-      font-size: 14px;
-   }
-   
-   .hero-action-sub {
-      font-size: 14px;
-   }
-}
+  .nav-links {
+    display: none;
+  }
 
+  .partners-track {
+    gap: 90px;
+  }
 
-/* =========================
-   Dropdown Navigation
-========================= */
+  .partners-track img {
+    height: 72px;
+  }
 
-.dropdown {
-  position: relative;
-  padding-bottom: 10px;   /* creates safe hover area */
-}
+  .hero-action-wrap {
+    width: 100%;
+  }
 
-.dropbtn {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-}
+  .hero-action-card {
+    padding: 18px 20px;
+  }
 
-.dropdown-content {
-  position: absolute;
-  top: calc(100% - 2px);   /* attaches dropdown to parent */
-  left: 0;
+  .hero-action-title {
+    font-size: 14px;
+  }
 
-  background: #fff;
-  min-width: 240px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
-
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-
-  transition: opacity 0.18s ease, transform 0.18s ease;
-
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 100;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.dropdown-content a:hover {
-  background: rgba(0,0,0,0.04);
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  .hero-action-sub {
+    font-size: 14px;
+  }
 }
