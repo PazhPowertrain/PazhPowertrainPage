@@ -1,219 +1,167 @@
-/* =========================================
-   Industries Page
-========================================= */
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industries | Pazh Powertrain</title>
+  <meta name="description" content="Industrial applications and distributed power solutions from Pazh Powertrain." />
 
-.industries-hero,
-.scroll-panel {
-  position: relative;
-  background-image: url("../assets/BackGround-Industries.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-.industries-hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="styles.css?v=20260209_final" />
 
-.industries-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.28) 100%
-  );
-  z-index: 1;
-}
+  <!-- Industries page CSS -->
+  <link rel="stylesheet" href="CSS/industries.css?v=20260312_final" />
+</head>
 
-.industries-hero-inner {
-  position: relative;
-  z-index: 2;
-  width: min(1320px, calc(100% - 56px));
-  margin: 0 auto;
-  color: #fff;
-  padding: 140px 0 100px;
-}
+<body>
 
-.eyebrow {
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  opacity: 0.9;
-}
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html#top" aria-label="Pazh Powertrain">
+        <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo"
+             onerror="this.style.display='none';" />
+        <span class="brand-text">PAZH POWERTRAIN</span>
+      </a>
 
-.industries-hero h1 {
-  max-width: 820px;
-  font-size: clamp(2.6rem, 5vw, 5.2rem);
-  line-height: 1.05;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
 
-.hero-text {
-  max-width: 700px;
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.92);
-}
+        <div class="dropdown">
+          <a class="dropbtn">Industries ▾</a>
+          <div class="dropdown-content">
+            <a href="aviation.html">Aviation</a>
+            <a href="marine.html">Marine</a>
+            <a href="distributed-power.html">Distributed Power</a>
+          </div>
+        </div>
 
-/* =========================================
-   Content Sections
-========================================= */
+        <div class="dropdown">
+          <a class="dropbtn">Technology ▾</a>
+          <div class="dropdown-content">
+            <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
+            <a href="integration.html">Integration Strategy</a>
+            <a href="system-components.html">System Components</a>
+          </div>
+        </div>
 
-.industries-content {
-  position: relative;
-  background: transparent;
-}
+        <div class="dropdown">
+          <a class="dropbtn">Partners ▾</a>
+          <div class="dropdown-content">
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="collaborations.html">Collaborations</a>
+          </div>
+        </div>
 
-.scroll-panel {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 0;
-}
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-.scroll-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(7, 12, 18, 0.10);
-  z-index: 0;
-}
+  <!-- Hero -->
+  <section id="top" class="industries-hero">
+    <div class="industries-overlay"></div>
 
-.panel-grid,
-.center-panel {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
+    <div class="industries-hero-inner">
+      <p class="eyebrow reveal">Industrial Applications</p>
+      <h1 class="reveal">Industrial Energy Systems</h1>
+      <p class="hero-text reveal">
+        Pazh Powertrain develops retrofit-oriented solutions for distributed power,
+        cleaner combustion pathways, and modular upgrade strategies for legacy industrial equipment.
+      </p>
+    </div>
+  </section>
 
-.panel-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
+  <!-- Content -->
+  <main class="industries-content">
 
-.panel-spacer {
-  min-height: 1px;
-}
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-spacer"></div>
+        <div class="panel-card reveal">
+          <h2>Distributed Power</h2>
+          <p>
+            This section is ready for your final content. You can describe modular
+            power generation, retrofit pathways, off-grid deployment, and industrial
+            decarbonization opportunities here.
+          </p>
+        </div>
+      </div>
+    </section>
 
-.panel-card {
-  max-width: 560px;
-  padding: 40px 38px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
-  color: #fff;
-}
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-card reveal">
+          <h2>Legacy Asset Upgrade</h2>
+          <p>
+            Use this block for messaging around retrofit instead of replacement,
+            practical engineering integration, staged validation, and lower-emission
+            transition strategies for industrial operators.
+          </p>
+        </div>
+        <div class="panel-spacer"></div>
+      </div>
+    </section>
 
-.panel-card h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-  line-height: 1.15;
-  margin-bottom: 18px;
-}
+    <section class="scroll-panel">
+      <div class="container panel-grid">
+        <div class="panel-spacer"></div>
+        <div class="panel-card reveal">
+          <h2>Implementation Pathway</h2>
+          <p>
+            Add your content here for real-world deployment, technical readiness,
+            integration approach, and future commercialization strategy.
+          </p>
+        </div>
+      </div>
+    </section>
 
-.panel-card p {
-  font-size: 1.02rem;
-  line-height: 1.85;
-  color: rgba(255, 255, 255, 0.9);
-}
+    <section class="scroll-panel final-panel">
+      <div class="container center-panel">
+        <div class="panel-card large reveal">
+          <h2>Ready for Detailed Content</h2>
+          <p>
+            This final section can later be used for a call to action, technical overview,
+            project examples, or industry collaboration messaging.
+          </p>
+          <a href="#contact" class="page-btn">Contact Us</a>
+        </div>
+      </div>
+    </section>
 
-.center-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  </main>
 
-.panel-card.large {
-  max-width: 760px;
-  text-align: center;
-}
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="contact-title">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@pazhpowertrain.com</div>
+        </div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Calgary, Alberta, Canada</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.page-btn {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: all 0.25s ease;
-}
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Pazh Powertrain. All rights reserved.
+    </div>
+  </footer>
 
-.page-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
-}
+  <script src="JS/industries.js?v=20260312_final"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-/* =========================================
-   Scroll Animation
-========================================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition:
-    opacity 0.9s ease,
-    transform 0.9s ease;
-  will-change: transform, opacity;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================
-   Responsive
-========================================= */
-
-@media (max-width: 991px) {
-  .industries-hero,
-  .scroll-panel {
-    background-attachment: scroll;
-  }
-
-  .panel-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .panel-card {
-    max-width: 100%;
-  }
-
-  .industries-hero-inner {
-    padding: 120px 0 80px;
-  }
-
-  .industries-hero h1,
-  .hero-text {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .industries-hero-inner {
-    width: min(100% - 32px, 1320px);
-  }
-
-  .panel-card {
-    padding: 28px 22px;
-    border-radius: 18px;
-  }
-
-  .panel-card h2 {
-    margin-bottom: 14px;
-  }
-}
+</body>
+</html>
