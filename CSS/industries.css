@@ -5,7 +5,7 @@
 .industries-hero,
 .scroll-panel {
   position: relative;
-  background-image: url("PazhPowertrainPage/assets/BackGround-Industries.jpg");
+  background-image: url("/PazhPowertrainPage/assets/BackGround-Industries.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
