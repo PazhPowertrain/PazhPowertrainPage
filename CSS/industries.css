@@ -25,8 +25,8 @@
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.28) 100%
+    rgba(0, 0, 0, 0.24) 45%,
+    rgba(0, 0, 0, 0.30) 100%
   );
   z-index: 1;
 }
@@ -38,15 +38,15 @@
 .industries-hero-inner {
   position: relative;
   z-index: 2;
-  padding: 110px 0 80px;
+  padding: 92px 0 72px;
   color: #fff;
 }
 
 .hero-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1fr);
-  gap: 56px;
+  grid-template-columns: minmax(320px, 1fr) minmax(380px, 1fr);
+  gap: 48px;
   align-items: center;
   justify-content: center;
 }
@@ -60,11 +60,11 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
-/* Left media box */
+/* Left box */
 .media-card {
   aspect-ratio: 1 / 1;
   padding: 16px;
@@ -82,29 +82,28 @@
   border-radius: 18px;
 }
 
-/* Right text box */
+/* Right box */
 .text-card {
   min-height: 540px;
   padding: 34px 36px;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #fff;
 }
 
 .eyebrow {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 14px;
-  opacity: 0.92;
   color: rgba(255, 255, 255, 0.92);
 }
 
 .text-card h1 {
-  font-size: clamp(2.3rem, 3.7vw, 4rem);
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 3.7vw, 4rem);
+  line-height: 1.06;
   font-weight: 800;
   margin-bottom: 18px;
   color: #fff;
@@ -112,7 +111,7 @@
 
 .text-card p {
   font-size: 1rem;
-  line-height: 1.74;
+  line-height: 1.72;
   margin-bottom: 14px;
   color: rgba(255, 255, 255, 0.94);
   text-align: justify;
@@ -137,7 +136,7 @@
 }
 
 .scroll-panel {
-  min-height: 100vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
@@ -173,7 +172,7 @@
   max-width: 560px;
   padding: 40px 38px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -247,7 +246,7 @@
   }
 
   .industries-hero-inner {
-    padding: 90px 0 64px;
+    padding: 82px 0 56px;
   }
 
   .hero-grid {
@@ -278,7 +277,7 @@
 
 @media (max-width: 640px) {
   .industries-hero-inner {
-    padding: 72px 0 48px;
+    padding: 64px 0 42px;
   }
 
   .media-card {
