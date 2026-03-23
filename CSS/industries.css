@@ -2,7 +2,8 @@
    Industries Page
 ========================================= */
 
-.industries-hero {
+.industries-hero,
+.scroll-panel {
   position: relative;
   background-image: url("../assets/BackGround-Industries.jpg");
   background-size: cover;
@@ -63,105 +64,96 @@
 }
 
 /* =========================================
-   Industries Content Area
+   Content Sections
 ========================================= */
 
 .industries-content {
   position: relative;
-  background-image: url("../assets/BackGround-Industries.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 80px 0 100px;
+  background: transparent;
 }
 
-/* optional subtle overlay on content area */
-.industries-content::before {
+.scroll-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.scroll-panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 12, 18, 0.18);
+  background: rgba(7, 12, 18, 0.10);
   z-index: 0;
-  pointer-events: none;
 }
 
-.industries-content > * {
+.panel-grid,
+.center-panel {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
-/* =========================================
-   Global Container
-========================================= */
-
-.container {
-  width: min(1200px, calc(100% - 56px));
-  margin: 0 auto;
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
 }
 
-/* =========================================
-   Industry Section Boxes
-========================================= */
+.panel-spacer {
+  min-height: 1px;
+}
 
-.industry-row {
-  width: min(1200px, calc(100% - 56px));
-  margin: 0 auto 56px auto;
-  padding: 48px 42px;
+.panel-card {
+  max-width: 560px;
+  padding: 40px 38px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
-}
-
-.industry-row:last-child {
-  margin-bottom: 0;
-}
-
-.industry-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.industry-text {
-  min-width: 0;
   color: #fff;
 }
 
-.industry-text h2 {
-  font-size: clamp(2rem, 2.8vw, 3rem);
+.panel-card h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
   line-height: 1.15;
-  margin-bottom: 20px;
-  color: #fff;
+  margin-bottom: 18px;
 }
 
-.industry-text p {
-  margin-bottom: 18px;
+.panel-card p {
   font-size: 1.02rem;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.industry-media {
-  min-width: 0;
+.center-panel {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.industry-media img,
-.industry-media video {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 18px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+.panel-card.large {
+  max-width: 760px;
+  text-align: center;
+}
+
+.page-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.page-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================
@@ -186,8 +178,17 @@
 
 @media (max-width: 991px) {
   .industries-hero,
-  .industries-content {
+  .scroll-panel {
     background-attachment: scroll;
+  }
+
+  .panel-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .panel-card {
+    max-width: 100%;
   }
 
   .industries-hero-inner {
@@ -198,22 +199,6 @@
   .hero-text {
     max-width: 100%;
   }
-
-  .industry-row {
-    width: min(100%, calc(100% - 40px));
-    padding: 34px 26px;
-    margin-bottom: 36px;
-  }
-
-  .industry-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .industry-media img,
-  .industry-media video {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 640px) {
@@ -221,28 +206,12 @@
     width: min(100% - 32px, 1320px);
   }
 
-  .industries-content {
-    padding: 56px 0 72px;
-  }
-
-  .industry-row {
-    width: min(100%, calc(100% - 24px));
-    padding: 24px 18px;
+  .panel-card {
+    padding: 28px 22px;
     border-radius: 18px;
-    margin-bottom: 24px;
   }
 
-  .industry-text h2 {
+  .panel-card h2 {
     margin-bottom: 14px;
-  }
-
-  .industry-text p {
-    font-size: 0.98rem;
-    line-height: 1.75;
-  }
-
-  .industry-media img,
-  .industry-media video {
-    border-radius: 14px;
   }
 }
