@@ -82,12 +82,13 @@
 }
 
 .text-card {
-  min-height: 540px;
-  padding: 34px 36px;
+  width: 100%;
+  max-width: 600px;   /* width */
+  height: 600px;      /* FIXED square size */
+  padding: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #fff;
 }
 
 .eyebrow {
