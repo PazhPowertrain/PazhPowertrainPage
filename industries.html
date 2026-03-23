@@ -5,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Industries | Pazh Powertrain</title>
 
-  <!-- Main global stylesheet -->
   <link rel="stylesheet" href="CSS/style.css" />
-
-  <!-- Page-specific stylesheet -->
   <link rel="stylesheet" href="CSS/industries.css" />
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pazh Powertrain</a>
@@ -28,18 +24,56 @@
     </div>
   </header>
 
-  <!-- Hero / Parallax Background Section -->
+  <!-- Hero -->
   <section class="industries-hero">
     <div class="industries-overlay"></div>
 
     <div class="industries-hero-inner">
-      <p class="eyebrow reveal">Industrial Applications</p>
-      <h1 class="reveal">Hydrogen Retrofit Solutions for Industrial Energy Systems</h1>
-      <p class="hero-text reveal">
-        Pazh Powertrain develops retrofit-oriented solutions for distributed power,
-        cleaner combustion pathways, and modular upgrade strategies for legacy
-        industrial equipment.
-      </p>
+      <div class="hero-grid">
+
+        <!-- LEFT BOX: photo or video goes here -->
+        <div class="hero-card media-card reveal">
+          <!-- Use ONE of the two options below -->
+
+          <!-- Option 1: Image -->
+          <img src="assets/technology.jpg" alt="Pazh Powertrain technology" />
+
+          <!-- Option 2: Video -->
+          <!--
+          <video autoplay muted loop playsinline>
+            <source src="assets/technology.mp4" type="video/mp4" />
+          </video>
+          -->
+        </div>
+
+        <!-- RIGHT BOX: text -->
+        <div class="hero-card text-card reveal">
+          <p class="eyebrow">Industrial Applications</p>
+          <h1>Hydrogen Retrofit Powertrain Platform</h1>
+          <p>
+            Pazh Powertrain develops a modular hydrogen retrofit platform designed
+            to transition existing industrial power systems toward low-emission
+            operation without requiring full asset replacement.
+          </p>
+          <p>
+            Our technology focuses on practical integration with legacy propulsion
+            and power generation systems, enabling operators to adopt cleaner
+            combustion pathways while preserving reliability and infrastructure
+            investment.
+          </p>
+          <p>
+            The system has progressed through early-stage development, including
+            core control architecture design and prototype validation. Current
+            efforts are focused on system integration and preparing for real-world
+            pilot deployment across targeted sectors.
+          </p>
+          <p>
+            Explore how this platform is applied across aerospace, marine, rail,
+            and industrial power systems.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -49,29 +83,6 @@
     <section class="scroll-panel">
       <div class="container panel-grid">
         <div class="panel-spacer"></div>
-        <div class="industries-hero-inner hero-grid">
-          <!-- LEFT: MEDIA BOX -->
-          <div class="hero-card media-card">
-            <img src="assets/your-image.jpg" alt="Technology">
-            <!-- OR video:
-            <video autoplay muted loop playsinline>
-            <source src="assets/video.mp4" type="video/mp4">
-          </video>
-            -->
-          </div>
-          
-          <!-- RIGHT: TEXT BOX -->
-          <div class="hero-card text-card">
-            <h1> Hydrogen Retrofit Powertrain Platform </h1>
-            <p>
-              Pazh Powertrain develops a modular hydrogen retrofit platform designed to transition existing industrial power systems toward low-emission operation without requiring full asset replacement. Our technology focuses on practical integration with legacy propulsion and power generation systems, enabling operators to adopt cleaner combustion pathways while preserving reliability and infrastructure investment. The system has progressed through early-stage development, including core control architecture design and prototype validation. Current efforts are focused on system integration and preparing for real-world pilot deployment across targeted sectors. Explore how this platform is applied across aerospace, marine, rail, and industrial power systems.
-            </p>
-          </div>
-        </div>
-    </section>
-    
-    <section class="scroll-panel">
-      <div class="container panel-grid">
         <div class="panel-card reveal">
           <h2>Upgrade Instead of Replace</h2>
           <p>
@@ -80,13 +91,11 @@
             sustainability and operational flexibility.
           </p>
         </div>
-        <div class="panel-spacer"></div>
       </div>
     </section>
 
     <section class="scroll-panel">
       <div class="container panel-grid">
-        <div class="panel-spacer"></div>
         <div class="panel-card reveal">
           <h2>Industrial Decarbonization Pathway</h2>
           <p>
@@ -95,6 +104,7 @@
             industrial environments.
           </p>
         </div>
+        <div class="panel-spacer"></div>
       </div>
     </section>
 
@@ -107,7 +117,6 @@
             assets, our industrial approach is focused on practical implementation,
             staged validation, and scalable commercialization.
           </p>
-
           <a href="#" class="page-btn">Talk to Us</a>
         </div>
       </div>
