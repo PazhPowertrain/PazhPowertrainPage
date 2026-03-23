@@ -215,8 +215,10 @@
     margin-bottom: 14px;
   }
 }
+
 .industry-row {
-  padding: 80px 0;
+   margin: 60px auto;   /* creates space BETWEEN sections */
+   padding: 60px 0;     /* internal spacing */
 }
 
 .industry-grid {
