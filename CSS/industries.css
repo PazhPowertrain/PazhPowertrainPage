@@ -85,7 +85,7 @@
    min-height: 540px;
    width: 100%;
    max-width: 600px;   /* width */
-   height: 600px;      /* FIXED square size */
+   height: 800px;      /* FIXED square size */
    padding: 34px 36px;
    display: flex;
    flex-direction: column;
