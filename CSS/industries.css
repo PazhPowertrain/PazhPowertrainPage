@@ -266,3 +266,9 @@
     text-align: left;
   }
 }
+.container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;        /* center */
+   padding: 0 40px;       /* space from left/right edges */
+}
