@@ -1,77 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Industries | Pazh Powertrain</title>
+  <meta
+    name="description"
+    content="Explore Pazh Powertrain application sectors across aviation, marine, and distributed power."
+  />
 
-  <!-- Main global stylesheet -->
-  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- Page-specific stylesheet -->
-  <link rel="stylesheet" href="CSS/industries.css" />
+  <!-- Match homepage stylesheet pattern -->
+  <link rel="stylesheet" href="styles.css?v=20260209_final" />
+  <link rel="stylesheet" href="industries.css?v=20260209_final" />
 </head>
+
 <body>
 
-  <!-- Header -->
+  <!-- Header: matches homepage exactly -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Pazh Powertrain</a>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Pazh Powertrain">
+        <img
+          class="brand-logo"
+          src="assets/company-logo.png"
+          alt="Pazh Powertrain logo"
+          onerror="this.style.display='none';"
+        />
+        <span class="brand-text">PAZH POWERTRAIN</span>
+      </a>
 
-      <nav class="main-nav">
+      <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="Industries.html" class="active">Industries</a>
-        <a href="#">Technology</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+
+        <div class="dropdown">
+          <a class="dropbtn" href="industries.html">Industries</a>
+          <div class="dropdown-content">
+            <a href="aviation.html">Aviation</a>
+            <a href="marine.html">Marine</a>
+            <a href="distributed-power.html">Distributed Power</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a class="dropbtn">Technology</a>
+          <div class="dropdown-content">
+            <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
+            <a href="integration.html">Integration Strategy</a>
+            <a href="system-components.html">System Components</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a class="dropbtn">Partners</a>
+          <div class="dropdown-content">
+            <a href="ecosystem.html">Ecosystem</a>
+            <a href="collaborations.html">Collaborations</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero / Parallax Background Section -->
+  <!-- Hero -->
   <section class="industries-hero">
     <div class="industries-overlay"></div>
 
-    <div class="industries-hero-inner">
-      <p class="eyebrow reveal">Industrial Applications</p>
-      <h1 class="reveal">Hydrogen Retrofit Solutions for Industrial Energy Systems</h1>
-      <p class="hero-text reveal">
-        Pazh Powertrain develops retrofit-oriented solutions for distributed power,
-        cleaner combustion pathways, and modular upgrade strategies for legacy
-        industrial equipment.
-      </p>
+    <div class="container industries-hero-inner">
+      <div class="hero-grid">
+
+        <!-- Left media box -->
+        <div class="hero-card media-card reveal">
+          <!-- Use image OR video, not both -->
+
+          <img src="assets/technology.jpg" alt="Pazh Powertrain technology" />
+
+          <!--
+          <video autoplay muted loop playsinline>
+            <source src="assets/technology.mp4" type="video/mp4" />
+          </video>
+          -->
+        </div>
+
+        <!-- Right text box -->
+        <div class="hero-card text-card reveal">
+          <p class="eyebrow">Industrial Applications</p>
+          <h1>Hydrogen Retrofit Powertrain Platform</h1>
+          <p>
+            Pazh Powertrain develops a modular hydrogen retrofit platform designed
+            to transition existing industrial power systems toward low-emission
+            operation without requiring full asset replacement.
+          </p>
+          <p>
+            Our technology focuses on practical integration with legacy propulsion
+            and power generation systems, enabling operators to adopt cleaner
+            combustion pathways while preserving reliability and infrastructure
+            investment.
+          </p>
+          <p>
+            The system has progressed through early-stage development, including
+            core control architecture design and prototype validation. Current
+            efforts are focused on system integration and preparing for real-world
+            pilot deployment across targeted sectors.
+          </p>
+          <p class="hero-cta-line">
+            Explore how this platform is applied across aerospace, marine, rail,
+            and industrial power systems.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Scroll Story Sections -->
+  <!-- Story sections -->
   <main class="industries-content">
 
     <section class="scroll-panel">
       <div class="container panel-grid">
         <div class="panel-spacer"></div>
-        <div class="industries-hero-inner hero-grid">
-          <!-- LEFT: MEDIA BOX -->
-          <div class="hero-card media-card">
-            <img src="assets/your-image.jpg" alt="Technology">
-            <!-- OR video:
-            <video autoplay muted loop playsinline>
-            <source src="assets/video.mp4" type="video/mp4">
-          </video>
-            -->
-          </div>
-          
-          <!-- RIGHT: TEXT BOX -->
-          <div class="hero-card text-card">
-            <h1> Hydrogen Retrofit Powertrain Platform </h1>
-            <p>
-              Pazh Powertrain develops a modular hydrogen retrofit platform designed to transition existing industrial power systems toward low-emission operation without requiring full asset replacement. Our technology focuses on practical integration with legacy propulsion and power generation systems, enabling operators to adopt cleaner combustion pathways while preserving reliability and infrastructure investment. The system has progressed through early-stage development, including core control architecture design and prototype validation. Current efforts are focused on system integration and preparing for real-world pilot deployment across targeted sectors. Explore how this platform is applied across aerospace, marine, rail, and industrial power systems.
-            </p>
-          </div>
-        </div>
-    </section>
-    
-    <section class="scroll-panel">
-      <div class="container panel-grid">
         <div class="panel-card reveal">
           <h2>Upgrade Instead of Replace</h2>
           <p>
@@ -80,13 +135,11 @@
             sustainability and operational flexibility.
           </p>
         </div>
-        <div class="panel-spacer"></div>
       </div>
     </section>
 
     <section class="scroll-panel">
       <div class="container panel-grid">
-        <div class="panel-spacer"></div>
         <div class="panel-card reveal">
           <h2>Industrial Decarbonization Pathway</h2>
           <p>
@@ -95,6 +148,7 @@
             industrial environments.
           </p>
         </div>
+        <div class="panel-spacer"></div>
       </div>
     </section>
 
@@ -107,8 +161,7 @@
             assets, our industrial approach is focused on practical implementation,
             staged validation, and scalable commercialization.
           </p>
-
-          <a href="#" class="page-btn">Talk to Us</a>
+          <a href="index.html#contact" class="page-btn">Talk to Us</a>
         </div>
       </div>
     </section>
