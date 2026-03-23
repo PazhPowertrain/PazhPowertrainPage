@@ -217,8 +217,13 @@
 }
 
 .industry-row {
-   margin: 60px auto;   /* creates space BETWEEN sections */
-   padding: 60px 0;     /* internal spacing */
+   margin: 60px auto;
+   padding: 50px;
+   max-width: 1200px;
+   background: rgba(255, 255, 255, 0.05);
+   border-radius: 16px;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(6px);
 }
 
 .industry-grid {
