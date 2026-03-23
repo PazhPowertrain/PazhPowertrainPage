@@ -268,3 +268,13 @@
   margin-bottom: 16px;
   color: rgba(255,255,255,0.92);
 }
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    padding: 28px;
+  }
+}
