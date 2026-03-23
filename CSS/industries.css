@@ -38,6 +38,10 @@
   margin: 0 auto;
   color: #fff;
   padding: 140px 0 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .eyebrow {
@@ -219,7 +223,10 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
+
+  max-width: 1200px;
+  margin: 0 auto;   /* centers EVERYTHING */
   align-items: center;
 }
 
@@ -238,19 +245,20 @@
 
 /* MEDIA BOX */
 .media-card {
+  aspect-ratio: 1 / 1;   /* same size as text box */
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  padding: 16px;
 }
 
 .media-card img,
 .media-card video {
   width: 100%;
-  border-radius: 18px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 18px;
 }
-
 /* TEXT BOX */
 .text-card {
   color: #fff;
@@ -274,7 +282,25 @@
     grid-template-columns: 1fr;
   }
 
-  .hero-card {
-    padding: 28px;
-  }
+.hero-card {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;   /* centers each box */
+
+  padding: 32px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+}
+.text-card {
+  aspect-ratio: 1 / 1;   /* THIS makes it square */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
