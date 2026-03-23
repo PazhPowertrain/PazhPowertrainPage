@@ -64,7 +64,6 @@
   overflow: hidden;
 }
 
-/* Left box */
 .media-card {
   aspect-ratio: 1 / 1;
   padding: 16px;
@@ -82,7 +81,6 @@
   border-radius: 18px;
 }
 
-/* Right box */
 .text-card {
   min-height: 540px;
   padding: 34px 36px;
@@ -219,10 +217,6 @@
   background: rgba(255, 255, 255, 0.10);
 }
 
-/* =========================================
-   Scroll Animation
-========================================= */
-
 .reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -234,10 +228,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* =========================================
-   Responsive
-========================================= */
 
 @media (max-width: 991px) {
   .industries-hero,
