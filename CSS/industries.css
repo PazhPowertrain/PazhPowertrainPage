@@ -6,7 +6,7 @@
 .scroll-panel {
   position: relative;
   background-image: url("/PazhPowertrainPage/assets/BackGround-Industries.jpg");
-  background-size: cover;
+  background-size: 110%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
