@@ -106,13 +106,6 @@ body {
   position: relative;
 }
 
-.dropbtn::after {
-  content: "▾";
-  font-size: 11px;
-  margin-left: 8px;
-  opacity: 0.65;
-  transform: translateY(-1px);
-}
 
 .dropdown::after {
   content: "";
