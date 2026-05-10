@@ -2,14 +2,43 @@
    Industries Page
 ========================================= */
 
-.industries-hero,
-.scroll-panel {
-  position: relative;
-  background-image: url("/PazhPowertrainPage/assets/BackGround-Industries.jpg");
-  background-size: 100%;
+/* Matches exploded-diagram infographic (dark tech + neon green accents) */
+:root {
+  --industry-dark: #07090d;
+  --industry-panel: #0b1018;
+  --industry-accent: #7dff6a;
+  --industry-accent-soft: rgba(125, 255, 106, 0.22);
+  /* Alternating horizontal strips: odd rows lighter (more forest visible), even rows darker */
+  --strip-overlay-light: rgba(7, 14, 22, 0.055);
+  --strip-overlay-dark: rgba(7, 14, 22, 0.19);
+}
+
+/*
+ * Single full-page backdrop for industries.html (this CSS loads only here).
+ * Uses relative paths so localhost works; old /PazhPowertrainPage/ URLs 404 locally.
+ *
+ * industries-backdrop.png is a landscape aerial (~1024×574). `cover` fills wide
+ * viewports cleanly; for 4K+ sharpness, replace with a higher-resolution file.
+ */
+body {
+  background-color: #0c1016;
+  background-image: url("../assets/industries-backdrop.png");
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+.industries-hero,
+.scroll-panel {
+  position: relative;
+  background: transparent;
 }
 
 .industries-hero {
@@ -22,11 +51,12 @@
 .industries-overlay {
   position: absolute;
   inset: 0;
+  /* Hero strip (area 1): darker scrim — pairs with opaque hero cards below */
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.24) 45%,
-    rgba(0, 0, 0, 0.30) 100%
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0.32) 45%,
+    rgba(0, 0, 0, 0.40) 100%
   );
   z-index: 1;
 }
@@ -45,9 +75,9 @@
 .hero-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(380px, 1fr);
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: minmax(300px, 1fr) minmax(360px, 1fr);
+  gap: 40px;
+  align-items: start;
   justify-content: center;
 }
 
@@ -81,49 +111,140 @@
   border-radius: 18px;
 }
 
-.text-card {
-   min-height: 540px;
-   width: 100%;
-   max-width: 600px;   /* width */
-   height: 800px;      /* FIXED square size */
-   padding: 34px 36px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   color: #fff;
+/* Exploded infographic: frame follows photo aspect (tall), no forced square */
+.hero-card.media-card--diagram {
+  aspect-ratio: auto;
+  max-width: min(480px, 100%);
+  padding: 0;
+  margin: 0 auto 0 0;
+
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 18%, rgba(40, 90, 55, 0.22) 0%, transparent 58%),
+    linear-gradient(165deg, #0e141c 0%, var(--industry-dark) 48%, #050608 100%);
+  border: 1px solid var(--industry-accent-soft);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 28px 72px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 22px;
 }
-  .eyebrow {
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+
+.hero-card.media-card--diagram img {
+  width: 100%;
+  height: auto;
+  max-height: min(82vh, 900px);
+  object-fit: contain;
+  object-position: center top;
+  border-radius: 0;
+  display: block;
+}
+
+.text-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #fff;
+  gap: 14px;
+
+  background: linear-gradient(
+    165deg,
+    rgba(18, 24, 32, 0.94) 0%,
+    rgba(10, 13, 18, 0.96) 100%
+  );
+  border: 1px solid var(--industry-accent-soft);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.45),
+    0 22px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Long copy stays inside the box without breaking layout */
+  max-height: 76vh;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
+/* Hero (area 1): darker frosted panels than “light” sector rows */
+.industries-hero .text-card {
+  background: linear-gradient(
+    165deg,
+    rgba(18, 24, 32, 0.96) 0%,
+    rgba(10, 13, 18, 0.98) 100%
+  );
+}
+
+.industries-hero .hero-card.media-card--diagram {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 18%, rgba(40, 90, 55, 0.26) 0%, transparent 58%),
+    linear-gradient(165deg, #0c141c 0%, var(--industry-dark) 48%, #030508 100%);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0;
+  color: var(--industry-accent);
 }
 
 .text-card h1 {
-  font-size: clamp(2.2rem, 3.7vw, 4rem);
-  line-height: 1.06;
+  font-size: clamp(1.55rem, 2.3vw, 2.25rem);
+  line-height: 1.14;
   font-weight: 800;
-  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
   color: #fff;
 }
 
 .text-card p {
-  font-size: 1rem;
-  line-height: 1.72;
-  margin-bottom: 14px;
-  color: rgba(255, 255, 255, 0.94);
-  text-align: justify;
-  text-justify: inter-word;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.90);
+  text-align: left;
 }
 
-.text-card p:last-child {
-  margin-bottom: 0;
+.text-card p.lead {
+  font-size: 1.04rem;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.text-card a {
+  color: #b8ffc5;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 255, 106, 0.35);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.text-card a:hover {
+  color: #e5ffe9;
+  text-decoration-color: rgba(125, 255, 106, 0.65);
+}
+
+.text-card::-webkit-scrollbar {
+  width: 10px;
+}
+
+.text-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.text-card::-webkit-scrollbar-thumb {
+  background: rgba(125, 255, 106, 0.28);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 .hero-cta-line {
-  font-weight: 600;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* =========================================
@@ -146,8 +267,27 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 12, 18, 0.10);
   z-index: 0;
+}
+
+/*
+ * Alternating strip tints (hero above is darker; here odd = lighter, even = darker):
+ * 1 Aerospace lighter, 2 Rail darker, 3 Marine lighter, 4 Distributed darker, 5 CTA lighter.
+ */
+.industries-content > .scroll-panel:nth-child(odd)::before {
+  background: var(--strip-overlay-light);
+}
+
+.industries-content > .scroll-panel:nth-child(even)::before {
+  background: var(--strip-overlay-dark);
+}
+
+/*
+ * Industry sector strips: thin divider between stacked sectors.
+ */
+.industries-content > .scroll-panel.scroll-panel--sector:not(:first-child) {
+  border-top: 1px solid rgba(125, 255, 106, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .panel-grid,
@@ -155,6 +295,12 @@
   position: relative;
   z-index: 1;
   width: 100%;
+}
+
+.center-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .panel-grid {
@@ -192,10 +338,183 @@
   color: rgba(255, 255, 255, 0.90);
 }
 
-.center-panel {
-  display: flex;
+/*
+ * Sector rows use flex so image + copy stay adjacent (not split by 1fr/1fr).
+ * Aerospace & distributed: anchored left. Rail: pair anchored right. Marine: centered.
+ */
+#aerospace-aviation .panel-grid.panel-grid--sector,
+#distributed-remote-energy .panel-grid.panel-grid--sector {
+  margin-left: clamp(28px, 6vw, 88px);
+}
+
+/* Photo left, text right; whole pair anchored to the page right */
+#rail-heavy-transport .panel-grid.panel-grid--sector {
+  margin-left: auto;
+  margin-right: clamp(28px, 6vw, 88px);
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+/* Same column order as Rail; centered so the landscape background balances left/right */
+#marine-maritime .panel-grid.panel-grid--sector {
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
-  align-items: center;
+  flex-direction: row;
+}
+
+#rail-heavy-transport .sector-media-frame img {
+  max-height: min(48vh, 440px);
+}
+
+#marine-maritime .sector-media-frame img {
+  max-height: min(48vh, 440px);
+}
+
+#distributed-remote-energy .sector-media-frame img {
+  max-height: min(48vh, 440px);
+}
+
+.panel-grid.panel-grid--sector {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 28px;
+  width: 100%;
+}
+
+.sector-media {
+  flex: 0 1 auto;
+  width: auto;
+  max-width: min(520px, 100%);
+  margin: 0;
+}
+
+.sector-media-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--industry-accent-soft);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.45),
+    0 24px 58px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: linear-gradient(165deg, #0e141c 0%, var(--industry-dark) 100%);
+}
+
+.sector-media-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: min(46vh, 420px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.panel-card--sector {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 0 1 min(520px, 100%);
+  width: auto;
+  max-width: min(520px, 100%);
+  min-width: min(260px, 100%);
+  margin: 0;
+  padding: 32px 34px;
+  background: linear-gradient(
+    165deg,
+    rgba(18, 24, 32, 0.92) 0%,
+    rgba(10, 13, 18, 0.94) 100%
+  );
+  border: 1px solid var(--industry-accent-soft);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 20px 56px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Match hero text-card: fixed vertical footprint, scroll long copy */
+  max-height: 76vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+.panel-card--sector::-webkit-scrollbar {
+  width: 10px;
+}
+
+.panel-card--sector::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-card--sector::-webkit-scrollbar-thumb {
+  background: rgba(125, 255, 106, 0.28);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.panel-card--sector .sector-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--industry-accent);
+  line-height: 1.35;
+}
+
+.panel-card--sector h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.28rem, 2.1vw, 1.85rem);
+  line-height: 1.22;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.panel-card--sector p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+/*
+ * Alternating card / frame tints (must follow base .sector-media-frame & .panel-card--sector).
+ * Odd rows: lighter (more background visible). Even rows: darker (matches hero emphasis).
+ */
+.industries-content > .scroll-panel:nth-child(odd) .panel-card--sector {
+  background: linear-gradient(
+    165deg,
+    rgba(18, 24, 32, 0.78) 0%,
+    rgba(10, 13, 18, 0.82) 100%
+  );
+}
+
+.industries-content > .scroll-panel:nth-child(even) .panel-card--sector {
+  background: linear-gradient(
+    165deg,
+    rgba(18, 24, 32, 0.94) 0%,
+    rgba(10, 13, 18, 0.96) 100%
+  );
+}
+
+.industries-content > .scroll-panel:nth-child(odd) .sector-media-frame {
+  background: linear-gradient(
+    165deg,
+    rgba(14, 20, 28, 0.72) 0%,
+    rgba(7, 10, 14, 0.78) 100%
+  );
+}
+
+.industries-content > .scroll-panel:nth-child(even) .sector-media-frame {
+  background: linear-gradient(165deg, #0e141c 0%, var(--industry-dark) 100%);
+}
+
+.industries-content > .scroll-panel:nth-child(odd).final-panel .panel-card {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .panel-card.large {
@@ -262,6 +581,24 @@
     gap: 24px;
   }
 
+  .panel-grid.panel-grid--sector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #aerospace-aviation .panel-grid.panel-grid--sector,
+  #distributed-remote-energy .panel-grid.panel-grid--sector {
+    margin-left: clamp(0px, 3vw, 24px);
+  }
+
+  #rail-heavy-transport .panel-grid.panel-grid--sector,
+  #marine-maritime .panel-grid.panel-grid--sector {
+    margin-left: clamp(0px, 3vw, 24px);
+    margin-right: clamp(0px, 3vw, 24px);
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   .panel-card {
     max-width: 100%;
   }
@@ -272,8 +609,16 @@
     padding: 64px 0 42px;
   }
 
-  .media-card {
+  .media-card:not(.media-card--diagram) {
     padding: 12px;
+  }
+
+  .hero-card.media-card--diagram {
+    max-width: 100%;
+  }
+
+  .hero-card.media-card--diagram img {
+    max-height: min(52vh, 560px);
   }
 
   .text-card {
