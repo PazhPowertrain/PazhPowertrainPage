@@ -1,18 +1,27 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aviation | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <title>Aviation &amp; Aerospace | Pazh Powertrain</title>
+  <meta name="description" content="Hydrogen retrofit for next-generation flight and mission-critical aerospace platforms — UAVs, rotorcraft, regional aircraft, and dual-use systems." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #60a5fa;
+      --sp-accent-soft: rgba(96, 165, 250, 0.20);
+      --sp-accent-dim:  rgba(96, 165, 250, 0.08);
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,10 +29,8 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
@@ -31,10 +38,10 @@
             <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
@@ -45,51 +52,185 @@
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
             <a href="partners.html" class="dropdown-overview">Our Partners</a>
             <div class="dropdown-divider"></div>
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
+  <div id="breadcrumb-bar"></div>
+
+  <!-- HERO -->
+  <section class="sp-hero sp-hero--split sp-hero--video">
+    <video class="sp-hero-video" autoplay muted loop playsinline>
+      <source src="assets/aviation-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="sp-hero-overlay"></div>
     <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Aviation</h1>
-      <p class="page-sub">
-        Hydrogen retrofit pathways for rotorcraft and other aviation applications.
-      </p>
+      <div class="sp-hero-body">
+        <div class="sp-hero-inner">
+          <p class="sp-eyebrow">Industries — Aviation</p>
+          <h1>Aviation &amp; Aerospace</h1>
+          <p class="sp-hero-sub">
+            A hydrogen retrofit platform engineered for the full spectrum of aerospace applications — from autonomous systems and rotorcraft to regional aircraft and mission-critical dual-use platforms.
+          </p>
+        </div>
+        <div class="sp-stat-panel reveal">
+          <div class="sp-stat">
+            <span class="sp-stat-num">4+</span>
+            <span class="sp-stat-label">Platform Categories</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">Dual</span>
+            <span class="sp-stat-label">Civil &amp; Defense Readiness</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">Modular</span>
+            <span class="sp-stat-label">Retrofit Architecture</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="page-content">
+  <!-- CORE CAPABILITIES -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
-        </p>
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Core Capabilities</span>
+        <h2>Engineered for the Full Range of Aerospace Platforms</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+      </div>
+      <div class="sp-card-grid sp-card-grid--2col">
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Architecture</span>
+          <h3>Platform-Agnostic Retrofit Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Propulsion</span>
+          <h3>Turbofan &amp; Turboshaft Integration</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Platforms</span>
+          <h3>UAV, Rotorcraft &amp; Regional Aircraft</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Defense</span>
+          <h3>Dual-Use &amp; Mission-Critical Readiness</h3>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION DOMAINS -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Application Domains</span>
+          <h2>Deployable Across the Aerospace Spectrum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+          <div class="sp-pill-list">
+            <span class="sp-pill">Fixed-Wing Regional</span>
+            <span class="sp-pill">Turboshaft Rotorcraft</span>
+            <span class="sp-pill">Military UAV</span>
+            <span class="sp-pill">Commercial Drone</span>
+            <span class="sp-pill">Auxiliary Power Units</span>
+            <span class="sp-pill">Hybrid Propulsion</span>
+            <span class="sp-pill">Special Mission Aircraft</span>
+          </div>
+        </div>
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Engine Types</span>
+            <span class="sp-aside-val">Turbofan, Turboshaft, Turboprop, APU</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Deployment Context</span>
+            <span class="sp-aside-val">Commercial, Defense, Remote Operations, Special Mission</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Retrofit Approach</span>
+            <span class="sp-aside-val">Modular integration preserving existing airframe and propulsion structure</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Fuel Flexibility</span>
+            <span class="sp-aside-val">Hydrogen blend-in and dedicated H₂ operation pathways</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT APPROACH -->
+  <section class="sp-section sp-section--tinted">
+    <div class="container">
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Deployment Approach</span>
+        <h2>A Staged Pathway from Assessment to Flight</h2>
+      </div>
+      <div class="sp-steps">
+        <div class="sp-step reveal">
+          <div class="sp-step-num">01</div>
+          <div class="sp-step-body">
+            <h3>Platform Feasibility &amp; Engineering Assessment</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">02</div>
+          <div class="sp-step-body">
+            <h3>Retrofit System Design &amp; Adaptation</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">03</div>
+          <div class="sp-step-body">
+            <h3>Ground Testing &amp; Prototype Validation</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">04</div>
+          <div class="sp-step-body">
+            <h3>Operational Certification &amp; Fleet Rollout</h3>
+            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Explore Aviation Retrofit Opportunities</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
-    </div>
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>

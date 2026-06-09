@@ -1,18 +1,27 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marine | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <title>Marine &amp; Maritime | Pazh Powertrain</title>
+  <meta name="description" content="Hydrogen retrofit for commercial vessels, port operations, offshore assets, and mission-critical maritime platforms." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #1d4ed8;
+      --sp-accent-soft: rgba(29, 78, 216, 0.22);
+      --sp-accent-dim:  rgba(29, 78, 216, 0.08);
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,10 +29,8 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
@@ -31,10 +38,10 @@
             <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
@@ -45,51 +52,157 @@
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
             <a href="partners.html" class="dropdown-overview">Our Partners</a>
             <div class="dropdown-divider"></div>
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
-      </p>
-    </div>
-  </section>
+  <div id="breadcrumb-bar"></div>
 
-  <section class="page-content">
+  <!-- HERO -->
+  <section class="sp-hero sp-hero--video">
+    <video class="sp-hero-video" autoplay muted loop playsinline>
+      <source src="assets/marine-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="sp-hero-overlay"></div>
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
+      <div class="sp-hero-inner">
+        <p class="sp-eyebrow">Industries — Marine</p>
+        <h1>Marine &amp; Maritime</h1>
+        <p class="sp-hero-sub">
+          Hydrogen retrofit for commercial vessels, port operations, offshore support assets, and mission-critical maritime platforms — practical decarbonization without full vessel replacement.
         </p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- STAT ROW -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
+      <div class="sp-stat-row reveal">
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">5+</span>
+          <span class="sp-stat-cell-label">Vessel &amp; platform categories addressed</span>
+        </div>
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">Dual</span>
+          <span class="sp-stat-cell-label">Commercial &amp; defense maritime applications</span>
+        </div>
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">Retrofit</span>
+          <span class="sp-stat-cell-label">No full propulsion or vessel replacement required</span>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- APPLICABLE PLATFORMS -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Platform Coverage</span>
+        <h2>Applicable Across Marine &amp; Maritime Operations</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+      </div>
+      <div class="sp-card-grid sp-card-grid--3col">
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Vessels</span>
+          <h3>Commercial &amp; Cargo Shipping</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Port &amp; Harbor</span>
+          <h3>Port Tugs &amp; Harbor Craft</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Offshore</span>
+          <h3>Offshore Support &amp; Remote Assets</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Patrol &amp; Defense</span>
+          <h3>Maritime Patrol &amp; Dual-Use Platforms</h3>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum perspiciatis.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Ferry &amp; Passenger</span>
+          <h3>Ferry Routes &amp; Passenger Vessels</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Emergency</span>
+          <h3>Emergency Response &amp; Rescue Craft</h3>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT: RETROFIT ADVANTAGE -->
+  <section class="sp-section sp-section--tinted">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Retrofit Advantage</span>
+          <h2>Modernizing Existing Fleets Without Replacement</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="sp-pill-list">
+            <span class="sp-pill">Turbine Engine Integration</span>
+            <span class="sp-pill">Diesel Retrofit Pathway</span>
+            <span class="sp-pill">IMO Compliance Support</span>
+            <span class="sp-pill">Remote Deployment Ready</span>
+            <span class="sp-pill">Fuel Flexibility</span>
+          </div>
+        </div>
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Engine Compatibility</span>
+            <span class="sp-aside-val">Marine turbines, medium-speed diesel, high-power auxiliary units</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Operational Environments</span>
+            <span class="sp-aside-val">Deep sea, coastal, inland waterway, port and harbor</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Regulatory Alignment</span>
+            <span class="sp-aside-val">Developed alongside emerging maritime decarbonization frameworks</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Capital Efficiency</span>
+            <span class="sp-aside-val">Extends asset life — avoids full vessel scrapping and replacement costs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Discuss Marine Retrofit Applications</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>
