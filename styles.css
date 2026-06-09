@@ -94,8 +94,17 @@ body {
 .btn {
   padding: 11px 18px !important;
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: #fff;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(135deg, #7a868f, #a2adb6) !important;
+  color: #fff !important;
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  background: linear-gradient(135deg, #8a979f, #b0bbc4) !important;
+  box-shadow: 0 8px 24px rgba(20, 60, 140, 0.45), 0 0 0 1px rgba(255,255,255,0.18);
 }
 
 /* =========================
@@ -176,6 +185,17 @@ body {
 
 .dropdown-content a:hover {
   background: rgba(0,0,0,0.04);
+}
+
+.dropdown-overview {
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.10);
+  margin: 4px 0;
 }
 
 .dropdown:hover .dropdown-content,
