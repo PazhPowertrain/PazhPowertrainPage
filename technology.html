@@ -4,15 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Technology | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <meta name="description" content="The Pazh Powertrain hydrogen retrofit platform — covering retrofit architecture, integration strategy, and core system components." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #a78bfa;
+      --sp-accent-soft: rgba(167, 139, 250, 0.22);
+      --sp-accent-dim:  rgba(167, 139, 250, 0.08);
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,70 +29,163 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
+            <a href="industries.html" class="dropdown-overview">All Industries</a>
+            <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
+            <a href="technology.html" class="dropdown-overview">Technology Overview</a>
+            <div class="dropdown-divider"></div>
             <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
             <a href="integration.html">Integration Strategy</a>
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html" class="dropdown-overview">Our Partners</a>
+            <div class="dropdown-divider"></div>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
+        <a href="about.html">About Us</a>
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
-      </p>
-    </div>
-  </section>
+  <div id="breadcrumb-bar"></div>
 
-  <section class="page-content">
+  <!-- HERO -->
+  <section class="sp-hero">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
+      <div class="sp-hero-inner">
+        <p class="sp-eyebrow">Technology</p>
+        <h1>Technology Overview</h1>
+        <p class="sp-hero-sub">
+          A modular, patented hydrogen retrofit platform spanning core architecture, multi-sector integration strategy, and purpose-built system components — designed to transition existing propulsion and power systems without requiring full replacement.
         </p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- THREE PILLARS -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
+      <div class="sp-section-header sp-section-header--center reveal">
+        <span class="sp-section-eyebrow">Platform Structure</span>
+        <h2>Three Pillars of the Pazh Retrofit Platform</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+      </div>
+      <div class="sp-pillar-grid">
+        <a href="hydrogen-architecture.html" class="sp-pillar reveal">
+          <div class="sp-pillar-icon">⚙️</div>
+          <h3>Hydrogen Retrofit Architecture</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
+          <span class="sp-pillar-arrow">Explore Architecture →</span>
+        </a>
+        <a href="integration.html" class="sp-pillar reveal">
+          <div class="sp-pillar-icon">🔗</div>
+          <h3>Integration Strategy</h3>
+          <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          <span class="sp-pillar-arrow">Explore Strategy →</span>
+        </a>
+        <a href="system-components.html" class="sp-pillar reveal">
+          <div class="sp-pillar-icon">🔋</div>
+          <h3>System Components</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa officia.</p>
+          <span class="sp-pillar-arrow">Explore Components →</span>
+        </a>
+      </div>
     </div>
+  </section>
+
+  <!-- PLATFORM OVERVIEW SPLIT -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Platform Approach</span>
+          <h2>Retrofit-First Design for Hard-to-Electrify Sectors</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+          <p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt.</p>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+        </div>
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Patent Status</span>
+            <span class="sp-aside-val">Proprietary hydrogen retrofit platform with active IP protection</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Target Engines</span>
+            <span class="sp-aside-val">Gas turbines, turbofan, turboshaft, turboprop, marine diesel, generator sets</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Development Stage</span>
+            <span class="sp-aside-val">Active engineering development — prototype validation underway</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Sector Coverage</span>
+            <span class="sp-aside-val">Aviation, Marine, Rail, Distributed Power, Defense &amp; Dual-Use</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT MILESTONES STAT ROW -->
+  <section class="sp-section sp-section--tinted">
+    <div class="container">
+      <div class="sp-section-header sp-section-header--center reveal">
+        <span class="sp-section-eyebrow">Development Status</span>
+        <h2>Where the Platform Stands Today</h2>
+      </div>
+      <div class="sp-stat-row reveal">
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">Patented</span>
+          <span class="sp-stat-cell-label">Core retrofit architecture protected under active IP filings</span>
+        </div>
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">4</span>
+          <span class="sp-stat-cell-label">Target sectors under active engineering development</span>
+        </div>
+        <div class="sp-stat-cell">
+          <span class="sp-stat-cell-num">TRL 4+</span>
+          <span class="sp-stat-cell-label">Technology readiness level across core platform components</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Explore the Pazh Technology Platform</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>

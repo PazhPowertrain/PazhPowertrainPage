@@ -3,16 +3,514 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aviation | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <title>Aviation &amp; Aerospace | Pazh Powertrain</title>
+  <meta name="description" content="Hydrogen retrofit for next-generation flight and mission-critical aerospace platforms — UAVs, rotorcraft, regional aircraft, and dual-use systems." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #60a5fa;
+      --sp-accent-soft: rgba(96, 165, 250, 0.20);
+      --sp-accent-dim:  rgba(96, 165, 250, 0.08);
+    }
+
+    /* ── Fleet Economics Calculator ── */
+    .calc-shell {
+      display: grid;
+      grid-template-columns: 400px 3px 1fr;
+      gap: 0 28px;
+      align-items: start;
+    }
+
+    .calc-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .calc-zone-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .calc-zone-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .calc-zone-label--metrics {
+      color: var(--sp-accent);
+      opacity: 0.7;
+    }
+    .calc-zone-label--metrics::after {
+      background: rgba(96,165,250,0.12);
+    }
+
+    .calc-divider {
+      width: 3px;
+      align-self: stretch;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(96,165,250,0.28) 8%,
+        rgba(96,165,250,0.45) 50%,
+        rgba(96,165,250,0.28) 92%,
+        transparent 100%
+      );
+      border-radius: 2px;
+    }
+
+    /* Input panel */
+    .calc-inputs {
+      background: linear-gradient(155deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.014) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      overflow: hidden;
+      position: sticky;
+      top: 96px;
+    }
+
+    .calc-group {
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .calc-group:last-child { border-bottom: none; }
+
+    .calc-group-title {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sp-accent);
+      margin-bottom: 13px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .calc-placeholder-tag {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      border: 1px solid rgba(245,158,11,0.28);
+      background: rgba(245,158,11,0.07);
+      border-radius: 999px;
+      padding: 2px 7px;
+    }
+
+    .calc-field { margin-bottom: 10px; }
+    .calc-field:last-child { margin-bottom: 0; }
+
+    .calc-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 5px;
+      gap: 6px;
+    }
+
+    .calc-label-note {
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.28);
+      flex-shrink: 0;
+    }
+
+    .calc-label-val {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sp-accent);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.1);
+      outline: none;
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--sp-accent);
+      cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(96,165,250,0.15);
+      transition: box-shadow 0.15s;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 5px rgba(96,165,250,0.28);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--sp-accent);
+      cursor: pointer; border: none;
+    }
+
+    .calc-input, .calc-select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 8px;
+      padding: 6px 10px;
+      color: #fff;
+      font-size: 0.8rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .calc-input:focus, .calc-select:focus { border-color: rgba(96,165,250,0.4); }
+
+    .calc-select {
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.35)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+    .calc-select option { background: #141e2e; color: #fff; }
+
+    .calc-toggle-group {
+      display: flex;
+      gap: 3px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 3px;
+    }
+    .calc-toggle-btn {
+      flex: 1;
+      padding: 5px 6px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.71rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .calc-toggle-btn.active {
+      background: var(--sp-accent);
+      color: #fff;
+    }
+    .calc-toggle-btn.active.green  { background: #059669; }
+    .calc-toggle-btn.active.blue   { background: #2563eb; }
+    .calc-toggle-btn.active.grey   { background: #6b7280; }
+
+    .calc-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .calc-slider-scale {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.59rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 2px;
+    }
+
+    /* Output panel */
+    .calc-outputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .calc-out-card {
+      background: linear-gradient(155deg, rgba(96,165,250,0.055) 0%, rgba(96,165,250,0.016) 100%);
+      border: 1px solid rgba(96,165,250,0.2);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 0 0 1px rgba(96,165,250,0.08), 0 4px 24px rgba(96,165,250,0.08);
+    }
+
+    .calc-out-card--wide { grid-column: 1 / -1; }
+
+    .calc-out-card--muted { opacity: 0.55; }
+
+    .calc-out-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sp-accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calc-coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    /* Bar chart */
+    .calc-bar-chart { display: flex; flex-direction: column; gap: 9px; }
+
+    .calc-bar-row {
+      display: grid;
+      grid-template-columns: 72px 1fr 58px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .calc-bar-name {
+      font-size: 0.69rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+    }
+
+    .calc-bar-track {
+      height: 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .calc-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.4s ease;
+    }
+    .calc-bar-fill--jeta { background: linear-gradient(90deg,#f87171,#ef4444); width: 100%; }
+    .calc-bar-fill--h2   { background: linear-gradient(90deg,var(--sp-accent),#34d399); width: 38%; }
+
+    .calc-bar-val {
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* Stat outputs */
+    .calc-out-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .calc-out-unit {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.4;
+    }
+    .calc-out-sub {
+      margin-top: 6px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.38);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .calc-h2-badge {
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(52,211,153,0.1);
+      border: 1px solid rgba(52,211,153,0.22);
+      color: #34d399;
+      margin-left: auto;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Equivalents */
+    .calc-equiv-row { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+
+    .calc-equiv-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .calc-equiv-icon {
+      width: 26px; height: 26px;
+      border-radius: 7px;
+      background: var(--sp-accent-dim);
+      border: 1px solid var(--sp-accent-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .calc-equiv-val { font-weight: 700; color: #fff; }
+
+    /* Reduction bar */
+    .calc-reduction-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .calc-reduction-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#34d399,#60a5fa);
+      border-radius: 3px;
+      width: 68%;
+      transition: width 0.4s ease;
+    }
+
+    /* Payback */
+    .calc-payback-track {
+      height: 7px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      margin: 12px 0 4px;
+      position: relative;
+      overflow: visible;
+    }
+    .calc-payback-fill {
+      height: 100%;
+      width: 42%;
+      background: linear-gradient(90deg,var(--sp-accent),#34d399);
+      border-radius: 4px;
+      position: relative;
+    }
+    .calc-payback-fill::after {
+      content: '';
+      position: absolute;
+      right: -1px; top: -3px;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--sp-accent);
+      border: 2px solid #141e2e;
+    }
+
+    /* NPV */
+    .calc-npv-row { display: flex; flex-direction: column; gap: 6px; }
+
+    .calc-npv-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .calc-npv-label { font-size: 0.71rem; color: rgba(255,255,255,0.5); }
+
+    .calc-npv-vals { display: flex; gap: 14px; }
+
+    .calc-npv-val {
+      font-size: 0.77rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .calc-npv-val--jeta { color: #f87171; }
+    .calc-npv-val--h2   { color: #34d399; }
+
+    /* SVG chart */
+    .calc-chart-svg { width: 100%; height: 96px; }
+
+    /* Legend row */
+    .calc-legend {
+      display: flex;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .calc-legend-item {
+      font-size: 0.67rem;
+      color: rgba(255,255,255,0.38);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .calc-legend-line {
+      display: inline-block;
+      width: 16px; height: 2px;
+      border-radius: 1px;
+    }
+    .calc-legend-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+    }
+
+    /* Scale label */
+    .calc-scale-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.59rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* Disclaimer */
+    .calc-disclaimer {
+      margin-top: 16px;
+      padding: 10px 14px;
+      background: rgba(96,165,250,0.05);
+      border: 1px solid rgba(96,165,250,0.1);
+      border-radius: 10px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.34);
+      line-height: 1.55;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .calc-shell { grid-template-columns: 1fr; }
+      .calc-divider { display: none; }
+      .calc-inputs { position: static; }
+    }
+    @media (max-width: 640px) {
+      .calc-outputs { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,70 +518,599 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
+            <a href="industries.html" class="dropdown-overview">All Industries</a>
+            <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
+            <a href="technology.html" class="dropdown-overview">Technology Overview</a>
+            <div class="dropdown-divider"></div>
             <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
             <a href="integration.html">Integration Strategy</a>
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html" class="dropdown-overview">Our Partners</a>
+            <div class="dropdown-divider"></div>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
+        <a href="about.html">About Us</a>
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
+  <div id="breadcrumb-bar"></div>
+
+  <!-- HERO -->
+  <section class="sp-hero sp-hero--split sp-hero--video">
+    <video class="sp-hero-video" autoplay muted loop playsinline>
+      <source src="assets/aviation-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="sp-hero-overlay"></div>
     <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Aviation</h1>
-      <p class="page-sub">
-        Hydrogen retrofit pathways for rotorcraft and other aviation applications.
-      </p>
+      <div class="sp-hero-body">
+        <div class="sp-hero-inner">
+          <p class="sp-eyebrow">Industries — Aviation</p>
+          <h1>Aviation &amp; Aerospace</h1>
+          <p class="sp-hero-sub">
+            A hydrogen retrofit platform engineered for the full spectrum of aerospace applications — from autonomous systems and rotorcraft to regional aircraft and mission-critical dual-use platforms.
+          </p>
+        </div>
+        <div class="sp-stat-panel reveal">
+          <div class="sp-stat">
+            <span class="sp-stat-num">4+</span>
+            <span class="sp-stat-label">Platform Categories</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">Dual</span>
+            <span class="sp-stat-label">Civil &amp; Defense Readiness</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">Modular</span>
+            <span class="sp-stat-label">Retrofit Architecture</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="page-content">
+  <!-- CORE CAPABILITIES -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
-        </p>
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Core Capabilities</span>
+        <h2>Engineered for the Full Range of Aerospace Platforms</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+      </div>
+      <div class="sp-card-grid sp-card-grid--2col">
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Architecture</span>
+          <h3>Platform-Agnostic Retrofit Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Propulsion</span>
+          <h3>Turbofan &amp; Turboshaft Integration</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Platforms</span>
+          <h3>UAV, Rotorcraft &amp; Regional Aircraft</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Defense</span>
+          <h3>Dual-Use &amp; Mission-Critical Readiness</h3>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET ECONOMICS CALCULATOR -->
+  <section class="sp-section" id="fleet-calculator">
+    <div class="container">
+
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Fleet Economics Calculator</span>
+        <h2>Jet-A vs. Hydrogen Retrofit — Cost &amp; Carbon Analysis</h2>
+        <p class="sp-section-lead">Enter your fleet's operational and financial data to generate a side-by-side projection of continued Jet-A operations versus a Pazh hydrogen combustion retrofit.</p>
+      </div>
+
+      <div class="calc-shell reveal">
+
+        <!-- ── INPUTS ─────────────────────────────── -->
+        <div class="calc-col">
+        <div class="calc-zone-label">Inputs</div>
+        <div class="calc-inputs">
+
+          <!-- 1. Fleet & Operations -->
+          <div class="calc-group">
+            <div class="calc-group-title">Fleet &amp; Operations</div>
+
+            <div class="calc-field">
+              <div class="calc-label">
+                Fleet Size (aircraft)
+                <span class="calc-label-val" id="val-fleet">12</span>
+              </div>
+              <input type="range" class="calc-slider" min="1" max="100" value="12"
+                oninput="document.getElementById('val-fleet').textContent=this.value">
+              <div class="calc-slider-scale"><span>1</span><span>50</span><span>100</span></div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">Engine / Platform</div>
+              <select class="calc-select" id="sel-engine" onchange="calcEnginePreset(this)">
+                <option value="56">Bell 407-class — Turboshaft · 56 gal/hr</option>
+                <option value="145">AW139-class — Turboshaft · 145 gal/hr</option>
+                <option value="65">PT6A-class — Turboprop · 65 gal/hr</option>
+                <option value="800">CFM56-class — Turbofan · 800 gal/hr</option>
+                <option value="0">Custom — enter below</option>
+              </select>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">
+                Fuel Burn Rate (gal/hr)
+                <span class="calc-label-val" id="val-burn">56</span>
+              </div>
+              <input type="range" class="calc-slider" id="sl-burn" min="10" max="1000" value="56"
+                oninput="document.getElementById('val-burn').textContent=this.value">
+              <div class="calc-slider-scale"><span>10</span><span>500</span><span>1000</span></div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">
+                Annual Flight Hours / Aircraft
+                <span class="calc-label-val" id="val-hrs">400 hrs</span>
+              </div>
+              <input type="range" class="calc-slider" min="50" max="2000" value="400" step="25"
+                oninput="document.getElementById('val-hrs').textContent=this.value+' hrs'">
+              <div class="calc-slider-scale"><span>50</span><span>1,000</span><span>2,000</span></div>
+            </div>
+          </div>
+
+          <!-- 2. Fuel Pricing -->
+          <div class="calc-group">
+            <div class="calc-group-title">Fuel Pricing</div>
+
+            <div class="calc-field-row">
+              <div class="calc-field">
+                <div class="calc-label">Jet-A ($/gal)</div>
+                <input type="number" class="calc-input" value="6.20" step="0.05" min="1" max="25" placeholder="6.20">
+              </div>
+              <div class="calc-field">
+                <div class="calc-label">H₂ ($/kg)</div>
+                <input type="number" class="calc-input" id="inp-h2price" value="8.50" step="0.25" min="1" max="30" placeholder="8.50">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">H₂ Price Scenario <span class="calc-label-note">sets H₂ price above</span></div>
+              <div class="calc-toggle-group" id="tg-h2scenario">
+                <button class="calc-toggle-btn" onclick="calcH2Scenario(this,'12.00')">Current</button>
+                <button class="calc-toggle-btn active" onclick="calcH2Scenario(this,'8.50')">2028</button>
+                <button class="calc-toggle-btn" onclick="calcH2Scenario(this,'5.00')">2030</button>
+                <button class="calc-toggle-btn" onclick="calcH2Scenario(this,null)">Custom</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Hydrogen Assumptions -->
+          <div class="calc-group">
+            <div class="calc-group-title">Hydrogen Assumptions</div>
+
+            <div class="calc-field">
+              <div class="calc-label">Production Pathway <span class="calc-label-note">sets CO₂e intensity</span></div>
+              <div class="calc-toggle-group" id="tg-h2type">
+                <button class="calc-toggle-btn active green" onclick="calcH2Type(this,'green','Green H₂','68%')">Green</button>
+                <button class="calc-toggle-btn" onclick="calcH2Type(this,'blue','Blue H₂','45%')">Blue</button>
+                <button class="calc-toggle-btn" onclick="calcH2Type(this,'grey','Grey H₂','18%')">Grey</button>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">
+                H₂ Blend Ratio
+                <span class="calc-label-val" id="val-blend">60%</span>
+              </div>
+              <input type="range" class="calc-slider" min="10" max="100" value="60" step="5"
+                oninput="document.getElementById('val-blend').textContent=this.value+'%'">
+              <div class="calc-slider-scale"><span>10% blend</span><span>55%</span><span>100% H₂</span></div>
+            </div>
+          </div>
+
+          <!-- 4. Retrofit & Infrastructure -->
+          <div class="calc-group">
+            <div class="calc-group-title">Retrofit &amp; Infrastructure <span class="calc-placeholder-tag">Placeholder</span></div>
+
+            <div class="calc-field-row">
+              <div class="calc-field">
+                <div class="calc-label">Retrofit / Aircraft ($)</div>
+                <input type="number" class="calc-input" value="180000" step="5000" min="0" placeholder="TBD">
+              </div>
+              <div class="calc-field">
+                <div class="calc-label">Infrastructure ($)</div>
+                <input type="number" class="calc-input" value="250000" step="10000" min="0" placeholder="Storage/supply">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">STC / Certification Cost ($)</div>
+              <input type="number" class="calc-input" value="120000" step="5000" min="0" placeholder="Per fleet">
+            </div>
+          </div>
+
+          <!-- 5. Financial Parameters -->
+          <div class="calc-group">
+            <div class="calc-group-title">Financial Parameters</div>
+
+            <div class="calc-field-row">
+              <div class="calc-field">
+                <div class="calc-label">Carbon Credit ($/t CO₂e)</div>
+                <input type="number" class="calc-input" id="inp-carbon" value="0" step="5" min="0" placeholder="Optional">
+              </div>
+              <div class="calc-field">
+                <div class="calc-label">Gov't Incentive ($)</div>
+                <input type="number" class="calc-input" value="0" step="10000" min="0" placeholder="Optional">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">
+                Discount Rate
+                <span class="calc-label-val" id="val-discount">7%</span>
+              </div>
+              <input type="range" class="calc-slider" min="1" max="20" value="7"
+                oninput="document.getElementById('val-discount').textContent=this.value+'%'">
+              <div class="calc-slider-scale"><span>1%</span><span>10%</span><span>20%</span></div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-label">Analysis Period</div>
+              <div class="calc-toggle-group" id="tg-period">
+                <button class="calc-toggle-btn active" onclick="setToggle('tg-period',this)">10 Years</button>
+                <button class="calc-toggle-btn" onclick="setToggle('tg-period',this)">20 Years</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /calc-inputs -->
+        </div><!-- /calc-col inputs -->
+
+        <div class="calc-divider"></div>
+
+        <!-- ── OUTPUTS ─────────────────────────────── -->
+        <div class="calc-col">
+        <div class="calc-zone-label calc-zone-label--metrics">Metrics</div>
+        <div class="calc-outputs">
+
+          <!-- Annual Fuel Cost -->
+          <div class="calc-out-card calc-out-card--wide">
+            <div class="calc-out-label">Annual Fuel Cost — Fleet-Wide</div>
+            <div class="calc-bar-chart">
+              <div class="calc-bar-row">
+                <span class="calc-bar-name">Jet-A</span>
+                <div class="calc-bar-track">
+                  <div class="calc-bar-fill calc-bar-fill--jeta"></div>
+                </div>
+                <span class="calc-bar-val">$1.66M</span>
+              </div>
+              <div class="calc-bar-row">
+                <span class="calc-bar-name">H₂ Retrofit</span>
+                <div class="calc-bar-track">
+                  <div class="calc-bar-fill calc-bar-fill--h2"></div>
+                </div>
+                <span class="calc-bar-val">$0.63M</span>
+              </div>
+            </div>
+            <div class="calc-out-sub" style="margin-top:10px">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#34d399" stroke-width="1.5"/><path d="M4 6l1.5 1.5L8 4" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Illustrative output — formula integration pending Pazh proprietary data
+            </div>
+          </div>
+
+          <!-- CO2e Savings -->
+          <div class="calc-out-card">
+            <div class="calc-out-label">Annual CO₂e Savings</div>
+            <div class="calc-out-num">1,842</div>
+            <div class="calc-out-unit">tonnes CO₂e / year — fleet-wide</div>
+            <div class="calc-out-sub">153 t CO₂e per aircraft / yr</div>
+            <div class="calc-equiv-row">
+              <div class="calc-equiv-item">
+                <div class="calc-equiv-icon">🚗</div>
+                <span><span class="calc-equiv-val">400</span> cars off the road</span>
+              </div>
+              <div class="calc-equiv-item">
+                <div class="calc-equiv-icon">🌳</div>
+                <span><span class="calc-equiv-val">84,000</span> trees equivalent</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carbon Footprint Reduction -->
+          <div class="calc-out-card">
+            <div class="calc-out-label">
+              Carbon Reduction
+              <span class="calc-h2-badge" id="h2-badge">Green H₂</span>
+            </div>
+            <div class="calc-out-num" id="out-reduction" style="color:#34d399">68%</div>
+            <div class="calc-out-unit">vs. Jet-A baseline, fleet-wide</div>
+            <div class="calc-reduction-bar">
+              <div class="calc-reduction-fill" id="reduction-fill"></div>
+            </div>
+            <div class="calc-scale-row" style="margin-top:3px">
+              <span>Grey — 18%</span><span>Blue — 45%</span><span>Green — 68%+</span>
+            </div>
+          </div>
+
+          <!-- Simple Payback -->
+          <div class="calc-out-card">
+            <div class="calc-out-label">Simple Payback</div>
+            <div class="calc-out-num">4.2 <span style="font-size:1rem;font-weight:600;opacity:0.55">yrs</span></div>
+            <div class="calc-out-unit">at selected H₂ price scenario</div>
+            <div class="calc-payback-track">
+              <div class="calc-payback-fill"></div>
+            </div>
+            <div class="calc-scale-row">
+              <span>0</span><span>5 yrs</span><span>10 yrs</span>
+            </div>
+            <div style="margin-top:8px;font-size:0.67rem;color:rgba(255,255,255,0.32)">
+              Sensitivity: 2.8 yrs (2030 H₂) — 6.1 yrs (Current H₂)
+            </div>
+          </div>
+
+          <!-- NPV Comparison -->
+          <div class="calc-out-card">
+            <div class="calc-out-label">Net Present Value</div>
+            <div class="calc-npv-row">
+              <div class="calc-npv-item">
+                <span class="calc-npv-label">10-Year NPV</span>
+                <div class="calc-npv-vals">
+                  <span class="calc-npv-val calc-npv-val--jeta">−$8.2M</span>
+                  <span class="calc-npv-val calc-npv-val--h2">−$4.1M</span>
+                </div>
+              </div>
+              <div class="calc-npv-item">
+                <span class="calc-npv-label">20-Year NPV</span>
+                <div class="calc-npv-vals">
+                  <span class="calc-npv-val calc-npv-val--jeta">−$14.7M</span>
+                  <span class="calc-npv-val calc-npv-val--h2">−$5.3M</span>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:2px;font-size:0.63rem;color:rgba(255,255,255,0.28)">
+                <span style="color:#f87171">■ Jet-A</span>
+                <span style="color:#34d399">■ H₂ Retrofit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Breakeven Curve -->
+          <div class="calc-out-card calc-out-card--wide">
+            <div class="calc-out-label">
+              Cumulative Cost Curves — Breakeven Analysis
+              <span class="calc-coming-soon">● Live chart on formula integration</span>
+            </div>
+            <svg class="calc-chart-svg" viewBox="0 0 560 96" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <line x1="0" y1="24" x2="560" y2="24" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="0" y1="48" x2="560" y2="48" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="0" y1="72" x2="560" y2="72" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="112" y1="0" x2="112" y2="96" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <line x1="224" y1="0" x2="224" y2="96" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <line x1="336" y1="0" x2="336" y2="96" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <line x1="448" y1="0" x2="448" y2="96" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              <!-- Jet-A cumulative (steep linear rise) -->
+              <polyline points="0,88 112,70 224,52 336,34 448,16 560,4" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- H2 cumulative (initial bump from capex, then flatter slope, crosses ~yr 5.5) -->
+              <polyline points="0,88 56,92 112,84 224,68 306,48 448,26 560,12" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Breakeven marker -->
+              <circle cx="306" cy="48" r="4" fill="#34d399"/>
+              <line x1="306" y1="0" x2="306" y2="96" stroke="#34d399" stroke-width="1" stroke-dasharray="3,3" opacity="0.45"/>
+              <text x="4" y="10" fill="rgba(255,255,255,0.28)" font-size="7" font-family="Inter,system-ui,sans-serif">Cumulative Cost ($)</text>
+              <text x="112" y="93" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Inter,system-ui,sans-serif" text-anchor="middle">Yr 2</text>
+              <text x="224" y="93" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Inter,system-ui,sans-serif" text-anchor="middle">Yr 4</text>
+              <text x="336" y="93" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Inter,system-ui,sans-serif" text-anchor="middle">Yr 6</text>
+              <text x="448" y="93" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Inter,system-ui,sans-serif" text-anchor="middle">Yr 8</text>
+              <text x="556" y="93" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Inter,system-ui,sans-serif" text-anchor="end">Yr 10</text>
+              <text x="312" y="43" fill="#34d399" font-size="7" font-family="Inter,system-ui,sans-serif">≈ Yr 5.5</text>
+            </svg>
+            <div class="calc-legend">
+              <span class="calc-legend-item"><span class="calc-legend-line" style="background:#f87171"></span>Jet-A Cumulative</span>
+              <span class="calc-legend-item"><span class="calc-legend-line" style="background:#60a5fa"></span>H₂ Retrofit Cumulative</span>
+              <span class="calc-legend-item"><span class="calc-legend-dot" style="background:#34d399"></span>Break-even</span>
+            </div>
+          </div>
+
+          <!-- Carbon Credit Revenue (conditional) -->
+          <div class="calc-out-card calc-out-card--wide calc-out-card--muted" id="card-carbon">
+            <div class="calc-out-label">
+              Annual Carbon Credit Revenue
+              <span class="calc-coming-soon">Set carbon credit price above to activate</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <div class="calc-out-num" style="opacity:0.25">—</div>
+              <div class="calc-out-unit" style="opacity:0.5">
+                Enter a carbon credit price ($/tonne CO₂e) in Financial Parameters to calculate annual revenue from fleet emissions savings.
+              </div>
+            </div>
+          </div>
+
+          <!-- Maintenance / NOx placeholder -->
+          <div class="calc-out-card calc-out-card--wide">
+            <div class="calc-out-label">
+              Maintenance Cost Differential &amp; NOx Climate Effects
+              <span class="calc-coming-soon">Coming Soon</span>
+            </div>
+            <div style="font-size:0.75rem;color:rgba(255,255,255,0.3);line-height:1.6">
+              Maintenance cost delta and NOx-related climate forcing are referenced in Pazh's technical analysis but not yet quantified. These fields will populate once proprietary engine test data is confirmed.
+            </div>
+          </div>
+
+        </div><!-- /calc-outputs -->
+        </div><!-- /calc-col metrics -->
+
+      </div><!-- /calc-shell -->
+
+      <div class="calc-disclaimer">
+        Output values shown are illustrative placeholders. Retrofit cost per aircraft, H₂ mass-flow reduction factor, and maintenance cost premium are explicitly marked as pending Pazh proprietary engine and pricing data — tagged <code style="font-size:0.68rem;background:rgba(245,158,11,0.1);color:#f59e0b;padding:1px 5px;border-radius:4px">Placeholder</code> above. Formula integration will be completed upon data confirmation.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPLICATION DOMAINS -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Application Domains</span>
+          <h2>Deployable Across the Aerospace Spectrum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+          <div class="sp-pill-list">
+            <span class="sp-pill">Fixed-Wing Regional</span>
+            <span class="sp-pill">Turboshaft Rotorcraft</span>
+            <span class="sp-pill">Military UAV</span>
+            <span class="sp-pill">Commercial Drone</span>
+            <span class="sp-pill">Auxiliary Power Units</span>
+            <span class="sp-pill">Hybrid Propulsion</span>
+            <span class="sp-pill">Special Mission Aircraft</span>
+          </div>
+        </div>
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Engine Types</span>
+            <span class="sp-aside-val">Turbofan, Turboshaft, Turboprop, APU</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Deployment Context</span>
+            <span class="sp-aside-val">Commercial, Defense, Remote Operations, Special Mission</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Retrofit Approach</span>
+            <span class="sp-aside-val">Modular integration preserving existing airframe and propulsion structure</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Fuel Flexibility</span>
+            <span class="sp-aside-val">Hydrogen blend-in and dedicated H₂ operation pathways</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT APPROACH -->
+  <section class="sp-section sp-section--tinted">
+    <div class="container">
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Deployment Approach</span>
+        <h2>A Staged Pathway from Assessment to Flight</h2>
+      </div>
+      <div class="sp-steps">
+        <div class="sp-step reveal">
+          <div class="sp-step-num">01</div>
+          <div class="sp-step-body">
+            <h3>Platform Feasibility &amp; Engineering Assessment</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">02</div>
+          <div class="sp-step-body">
+            <h3>Retrofit System Design &amp; Adaptation</h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">03</div>
+          <div class="sp-step-body">
+            <h3>Ground Testing &amp; Prototype Validation</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+          </div>
+        </div>
+        <div class="sp-step reveal">
+          <div class="sp-step-num">04</div>
+          <div class="sp-step-body">
+            <h3>Operational Certification &amp; Fleet Rollout</h3>
+            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Explore Aviation Retrofit Opportunities</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
-    </div>
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    function setToggle(groupId, btn) {
+      const g = document.getElementById(groupId);
+      g.querySelectorAll('.calc-toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function calcH2Scenario(btn, price) {
+      setToggle('tg-h2scenario', btn);
+      if (price !== null) {
+        document.getElementById('inp-h2price').value = price;
+      }
+    }
+
+    function calcH2Type(btn, cls, label, pct) {
+      const g = document.getElementById('tg-h2type');
+      g.querySelectorAll('.calc-toggle-btn').forEach(b => {
+        b.classList.remove('active', 'green', 'blue', 'grey');
+      });
+      btn.classList.add('active', cls);
+      document.getElementById('h2-badge').textContent = label;
+      document.getElementById('out-reduction').textContent = pct;
+      document.getElementById('reduction-fill').style.width = pct;
+      const color = cls === 'green' ? '#34d399' : cls === 'blue' ? '#60a5fa' : '#9ca3af';
+      document.getElementById('out-reduction').style.color = color;
+      document.getElementById('h2-badge').style.color = color;
+      document.getElementById('h2-badge').style.borderColor = color + '44';
+      document.getElementById('h2-badge').style.background = color + '18';
+    }
+
+    function calcEnginePreset(sel) {
+      const v = parseInt(sel.value);
+      if (v > 0) {
+        const sl = document.getElementById('sl-burn');
+        sl.value = v;
+        document.getElementById('val-burn').textContent = v;
+      }
+    }
   </script>
 </body>
 </html>

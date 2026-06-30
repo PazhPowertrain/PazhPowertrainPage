@@ -75,10 +75,10 @@ body {
 .hero-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(360px, 1fr);
-  gap: 40px;
-  align-items: start;
-  justify-content: center;
+  grid-template-columns: minmax(300px, 2fr) minmax(600px, 1fr);
+  gap: 60px;
+  align-items: center;
+  justify-content: start;
 }
 
 .hero-card {
@@ -116,7 +116,7 @@ body {
   aspect-ratio: auto;
   max-width: min(480px, 100%);
   padding: 0;
-  margin: 0 auto 0 0;
+  margin: 0 auto 0 -28px;
 
   background:
     radial-gradient(ellipse 90% 55% at 50% 18%, rgba(40, 90, 55, 0.22) 0%, transparent 58%),
@@ -127,6 +127,7 @@ body {
     0 28px 72px rgba(0, 0, 0, 0.48),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   border-radius: 22px;
+  overflow: visible;
 }
 
 .hero-card.media-card--diagram img {
@@ -135,7 +136,7 @@ body {
   max-height: min(82vh, 900px);
   object-fit: contain;
   object-position: center top;
-  border-radius: 0;
+  border-radius: 20px;
   display: block;
 }
 
@@ -173,12 +174,17 @@ body {
     rgba(18, 24, 32, 0.96) 0%,
     rgba(10, 13, 18, 0.98) 100%
   );
+  margin-left: 48px;
+  width: calc(100% - 48px);
+  max-width: 700px;
 }
 
 .industries-hero .hero-card.media-card--diagram {
   background:
     radial-gradient(ellipse 90% 55% at 50% 18%, rgba(40, 90, 55, 0.26) 0%, transparent 58%),
     linear-gradient(165deg, #0c141c 0%, var(--industry-dark) 48%, #030508 100%);
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -342,30 +348,69 @@ body {
  * Sector rows use flex so image + copy stay adjacent (not split by 1fr/1fr).
  * Aerospace & distributed: anchored left. Rail: pair anchored right. Marine: centered.
  */
-#aerospace-aviation .panel-grid.panel-grid--sector,
+/* Aerospace: text far left, image far right, space-between → image expands left */
+#aerospace-aviation .panel-grid.panel-grid--sector {
+  justify-content: space-between;
+  align-items: center;
+}
+
+#aerospace-aviation .sector-media {
+  margin-right: clamp(60px, 8vw, 120px);
+}
+
+#aerospace-aviation .panel-card--sector {
+  margin-left: clamp(16px, 3vw, 48px);
+}
+
+/* Distributed: image at very left, text pushed to right */
 #distributed-remote-energy .panel-grid.panel-grid--sector {
-  margin-left: clamp(28px, 6vw, 88px);
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
-/* Photo left, text right; whole pair anchored to the page right */
+#distributed-remote-energy .panel-card--sector {
+  margin-right: clamp(28px, 5vw, 80px);
+}
+
+/* Rail: image at left edge, text far right with moderate gap from edge */
 #rail-heavy-transport .panel-grid.panel-grid--sector {
-  margin-left: auto;
-  margin-right: clamp(28px, 6vw, 88px);
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 }
 
-/* Same column order as Rail; centered so the landscape background balances left/right */
+#rail-heavy-transport .panel-card--sector {
+  margin-right: clamp(28px, 5vw, 80px);
+}
+
+#rail-heavy-transport .sector-media {
+  margin-left: clamp(60px, 8vw, 120px);
+}
+
+/* Marine: text at left edge, image at right → image expands left */
 #marine-maritime .panel-grid.panel-grid--sector {
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+#marine-maritime .sector-media {
+  margin-right: clamp(60px, 8vw, 120px);
+}
+
+#marine-maritime .panel-card--sector {
+  margin-left: clamp(16px, 3vw, 48px);
+}
+
+#distributed-remote-energy .sector-media {
+  margin-left: clamp(60px, 8vw, 120px);
 }
 
 #rail-heavy-transport .sector-media-frame img {
   max-height: min(48vh, 440px);
 }
+
 
 #marine-maritime .sector-media-frame img {
   max-height: min(48vh, 440px);
@@ -377,9 +422,9 @@ body {
 
 .panel-grid.panel-grid--sector {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   gap: 28px;
   width: 100%;
@@ -390,6 +435,8 @@ body {
   width: auto;
   max-width: min(520px, 100%);
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .sector-media-frame {
@@ -463,6 +510,22 @@ body {
   margin: 0;
   color: var(--industry-accent);
   line-height: 1.35;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 255, 106, 0.55);
+  background: rgba(125, 255, 106, 0.07);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.panel-card--sector .sector-eyebrow:hover {
+  transform: scale(1.06);
+  background: rgba(125, 255, 106, 0.16);
+  border-color: rgba(125, 255, 106, 0.85);
+  box-shadow: 0 0 14px rgba(125, 255, 106, 0.22);
 }
 
 .panel-card--sector h2 {
@@ -548,6 +611,24 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.sector-media.visible {
+  transform: translateY(0) scale(1.5);
+}
+
+#aerospace-aviation .sector-media.visible,
+#marine-maritime .sector-media.visible {
+  transform: translateX(-6%) translateY(0) scale(1.5);
+}
+
+#rail-heavy-transport .sector-media.visible,
+#distributed-remote-energy .sector-media.visible {
+  transform: translateX(6%) translateY(0) scale(1.5);
+}
+
+.hero-card.media-card--diagram.visible {
+  transform: translateX(6%) translateY(0) scale(1.3);
 }
 
 @media (max-width: 991px) {

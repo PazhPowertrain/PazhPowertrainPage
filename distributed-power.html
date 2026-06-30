@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Distributed-power | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <title>Distributed Power &amp; Remote Energy | Pazh Powertrain</title>
+  <meta name="description" content="Hydrogen retrofit for backup power systems, remote industrial sites, off-grid operations, and critical energy infrastructure in demanding environments." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #94a3b8;
+      --sp-accent-soft: rgba(148, 163, 184, 0.20);
+      --sp-accent-dim:  rgba(148, 163, 184, 0.07);
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,70 +29,177 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
+            <a href="industries.html" class="dropdown-overview">All Industries</a>
+            <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
+            <a href="technology.html" class="dropdown-overview">Technology Overview</a>
+            <div class="dropdown-divider"></div>
             <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
             <a href="integration.html">Integration Strategy</a>
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html" class="dropdown-overview">Our Partners</a>
+            <div class="dropdown-divider"></div>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
+        <a href="about.html">About Us</a>
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
+  <div id="breadcrumb-bar"></div>
+
+  <!-- HERO -->
+  <section class="sp-hero sp-hero--split sp-hero--video">
+    <video class="sp-hero-video" autoplay muted loop playsinline>
+      <source src="assets/distributed-power-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="sp-hero-overlay"></div>
     <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
-      </p>
+      <div class="sp-hero-body">
+        <div class="sp-hero-inner">
+          <p class="sp-eyebrow">Industries — Distributed Power</p>
+          <h1>Distributed Power &amp; Remote Energy</h1>
+          <p class="sp-hero-sub">
+            Hydrogen retrofit for backup power systems, remote industrial sites, off-grid operations, and critical energy infrastructure — reliable, lower-emission power generation without full infrastructure replacement.
+          </p>
+        </div>
+        <div class="sp-stat-panel reveal">
+          <div class="sp-stat">
+            <span class="sp-stat-num">Off-Grid</span>
+            <span class="sp-stat-label">Remote &amp; Isolated Deployment</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">24/7</span>
+            <span class="sp-stat-label">Continuous Operation Capable</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat-num">Scalable</span>
+            <span class="sp-stat-label">Modular Capacity Architecture</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="page-content">
+  <!-- OPERATIONAL ENVIRONMENTS -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
-        </p>
+      <div class="sp-section-header sp-section-header--center reveal">
+        <span class="sp-section-eyebrow">Operational Environments</span>
+        <h2>Power Generation Where the Grid Cannot Reach</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+      </div>
+      <div class="sp-card-grid sp-card-grid--3col">
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Remote Industry</span>
+          <h3>Remote Mining &amp; Resource Sites</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam nostrud.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Critical Infrastructure</span>
+          <h3>Backup &amp; Continuity Power</h3>
+          <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor reprehenderit.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Defense</span>
+          <h3>Expeditionary &amp; Forward-Base Energy</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Renewables</span>
+          <h3>Hybrid Renewable Integration</h3>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Industrial</span>
+          <h3>On-Site Industrial Process Power</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Emergency</span>
+          <h3>Emergency Response &amp; Disaster Recovery</h3>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETROFIT ADVANTAGE SPLIT -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Generator Compatibility</span>
+            <span class="sp-aside-val">Turbine-based and reciprocating generator sets, mobile and stationary</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Output Range</span>
+            <span class="sp-aside-val">Scalable from site-level backup to continuous baseload generation</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Hydrogen Supply</span>
+            <span class="sp-aside-val">Onsite storage compatible; pipeline, tube trailer, and compressed H₂ feed</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Fuel Flexibility</span>
+            <span class="sp-aside-val">Blend-in capable — supports phased H₂ adoption with existing fuel infrastructure</span>
+          </div>
+        </div>
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Technical Approach</span>
+          <h2>Extending the Life of Power Generation Assets</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="sp-pill-list">
+            <span class="sp-pill">Gas Turbine Generator Sets</span>
+            <span class="sp-pill">Mobile Generation Units</span>
+            <span class="sp-pill">Microgrid Integration</span>
+            <span class="sp-pill">Islanded Grid Support</span>
+            <span class="sp-pill">Hybrid Diesel-H₂</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Explore Distributed Power Solutions</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
-    </div>
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>

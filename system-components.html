@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>System-components | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <title>System Components | Pazh Powertrain</title>
+  <meta name="description" content="Core hardware and control elements of the Pazh hydrogen retrofit platform — ejector, H2 storage, gas control module, electronics, PLC, HMI, and wiring harness." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/sector-pages.css?v=20260609" />
+
+  <style>
+    :root {
+      --sp-accent:      #67e8f9;
+      --sp-accent-soft: rgba(103, 232, 249, 0.20);
+      --sp-accent-dim:  rgba(103, 232, 249, 0.07);
+    }
+  </style>
 </head>
-<body>
+<body class="sp-page">
 
   <header class="site-header">
     <div class="container nav">
@@ -20,70 +29,203 @@
         <img class="brand-logo" src="assets/company-logo.png" alt="Pazh Powertrain logo" onerror="this.style.display='none';" />
         <span class="brand-text">PAZH POWERTRAIN</span>
       </a>
-
       <nav class="nav-links">
         <a href="index.html">Home</a>
-
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
+            <a href="industries.html" class="dropdown-overview">All Industries</a>
+            <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
+            <a href="technology.html" class="dropdown-overview">Technology Overview</a>
+            <div class="dropdown-divider"></div>
             <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
             <a href="integration.html">Integration Strategy</a>
             <a href="system-components.html">System Components</a>
           </div>
         </div>
-
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html" class="dropdown-overview">Our Partners</a>
+            <div class="dropdown-divider"></div>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
-
+        <a href="about.html">About Us</a>
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
-      </p>
-    </div>
-  </section>
+  <div id="breadcrumb-bar"></div>
 
-  <section class="page-content">
+  <!-- HERO -->
+  <section class="sp-hero">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
+      <div class="sp-hero-inner">
+        <p class="sp-eyebrow">Technology — Components</p>
+        <h1>System Components</h1>
+        <p class="sp-hero-sub">
+          The core hardware and control elements of the Pazh hydrogen retrofit platform — from hydrogen storage and ejector-based fuel injection through to control electronics, PLC management, HMI interfaces, and integration wiring.
         </p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- COMPONENT LIST -->
+  <section class="sp-section sp-section--tinted">
     <div class="container">
-      © <span id="year"></span> Pazh Powertrain. All rights reserved.
+      <div class="sp-section-header reveal">
+        <span class="sp-section-eyebrow">Core Components</span>
+        <h2>What Makes Up the Retrofit System</h2>
+        <p class="sp-section-lead">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+      </div>
+      <div class="sp-component-list">
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">01</div>
+          <div class="sp-component-name">
+            <span>Fuel Supply</span>
+            Ejector System
+          </div>
+          <div class="sp-component-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">02</div>
+          <div class="sp-component-name">
+            <span>Storage</span>
+            Hydrogen Tank Assembly
+          </div>
+          <div class="sp-component-desc">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">03</div>
+          <div class="sp-component-name">
+            <span>Flow Management</span>
+            Gas Control Module
+          </div>
+          <div class="sp-component-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">04</div>
+          <div class="sp-component-name">
+            <span>Control Hardware</span>
+            Control Electronics Package
+          </div>
+          <div class="sp-component-desc">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">05</div>
+          <div class="sp-component-name">
+            <span>Logic &amp; Automation</span>
+            Programmable Logic Controller (PLC)
+          </div>
+          <div class="sp-component-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">06</div>
+          <div class="sp-component-name">
+            <span>Operator Interface</span>
+            Human–Machine Interface (HMI)
+          </div>
+          <div class="sp-component-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam qui dolorem ipsum.</div>
+        </div>
+        <div class="sp-component-item reveal">
+          <div class="sp-component-index">07</div>
+          <div class="sp-component-name">
+            <span>Integration</span>
+            Wiring Harness &amp; Connectors
+          </div>
+          <div class="sp-component-desc">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo voluptas nulla pariatur at vero eos accusamus.</div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- CONTROL ARCHITECTURE SPLIT -->
+  <section class="sp-section">
+    <div class="container">
+      <div class="sp-split">
+        <div class="sp-split-content reveal">
+          <span class="sp-section-eyebrow">Control Architecture</span>
+          <h2>Integrated Control &amp; Monitoring Layer</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="sp-aside-panel reveal">
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">PLC Integration</span>
+            <span class="sp-aside-val">Interfaces with existing engine management systems — no replacement required</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">HMI</span>
+            <span class="sp-aside-val">Touch-screen operator panel with real-time H₂ flow, pressure, and fault monitoring</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Safety Monitoring</span>
+            <span class="sp-aside-val">Continuous hydrogen leak detection, automated shutoff, and alert escalation</span>
+          </div>
+          <div class="sp-aside-row">
+            <span class="sp-aside-label">Data Logging</span>
+            <span class="sp-aside-val">Onboard operational data capture for performance analysis and maintenance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITY CARDS -->
+  <section class="sp-section sp-section--tinted">
+    <div class="container">
+      <div class="sp-section-header sp-section-header--center reveal">
+        <span class="sp-section-eyebrow">System Capabilities</span>
+        <h2>Engineering Properties of the Platform</h2>
+      </div>
+      <div class="sp-card-grid sp-card-grid--3col">
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Durability</span>
+          <h3>Designed for Operational Environments</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Modularity</span>
+          <h3>Configurable by Platform and Application</h3>
+          <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate esse cillum.</p>
+        </div>
+        <div class="sp-card reveal">
+          <span class="sp-card-tag">Serviceability</span>
+          <h3>Maintainable in Field Conditions</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt officia deserunt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sp-cta">
+    <div class="container">
+      <div class="sp-cta-inner reveal">
+        <h2>Learn More About System Components</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+        <a href="index.html#contact" class="sp-cta-btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Pazh Powertrain. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="sector.js"></script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>

@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Partners | Pazh Powertrain</title>
-  <meta name="description" content="Pazh Powertrain industries overview." />
+  <meta name="description" content="The ecosystem of partners and collaborators supporting Pazh Powertrain's commercialization journey." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260311_pages_01" />
+  <link rel="stylesheet" href="styles.css?v=20260609_breadcrumb" />
+  <link rel="stylesheet" href="CSS/partners.css?v=20260609" />
 </head>
 <body>
 
@@ -27,8 +28,11 @@
         <div class="dropdown">
           <a class="dropbtn" href="industries.html">Industries</a>
           <div class="dropdown-content">
+            <a href="industries.html" class="dropdown-overview">All Industries</a>
+            <div class="dropdown-divider"></div>
             <a href="aviation.html">Aviation</a>
             <a href="marine.html">Marine</a>
+            <a href="rail.html">Rail &amp; Heavy Transport</a>
             <a href="distributed-power.html">Distributed Power</a>
           </div>
         </div>
@@ -36,6 +40,8 @@
         <div class="dropdown">
           <a class="dropbtn" href="technology.html">Technology</a>
           <div class="dropdown-content">
+            <a href="technology.html" class="dropdown-overview">Technology Overview</a>
+            <div class="dropdown-divider"></div>
             <a href="hydrogen-architecture.html">Hydrogen Retrofit Architecture</a>
             <a href="integration.html">Integration Strategy</a>
             <a href="system-components.html">System Components</a>
@@ -45,33 +51,193 @@
         <div class="dropdown">
           <a class="dropbtn" href="partners.html">Partners</a>
           <div class="dropdown-content">
-            <a href="ecosystem.html">Ecosystem</a>
-            <a href="collaborations.html">Collaborations</a>
+            <a href="partners.html" class="dropdown-overview">Our Partners</a>
+            <div class="dropdown-divider"></div>
+            <a href="partners.html#ecosystem">Ecosystem</a>
+            <a href="partners.html#collaborations">Collaborations</a>
           </div>
         </div>
 
+        <a href="about.html">About Us</a>
         <a href="index.html#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-eyebrow">Pazh Powertrain</div>
-      <h1 class="page-title">Industries</h1>
-      <p class="page-sub">
-        Overview of application sectors for hydrogen retrofit propulsion and distributed energy systems.
+  <div id="breadcrumb-bar"></div>
+
+  <!-- HERO -->
+  <section class="partners-hero">
+    <div class="container partners-hero-inner">
+      <p class="partners-eyebrow reveal">Our Partners</p>
+      <h1 class="reveal">A Network Accelerating Hydrogen Commercialization</h1>
+      <p class="partners-hero-sub reveal">
+        Pazh Powertrain operates within a <strong>growing</strong> network of industry partners, research institutions,
+        accelerators, and government programs — all aligned around advancing <strong>practical hydrogen
+        retrofit technology</strong> from development to real-world deployment.
       </p>
     </div>
   </section>
 
-  <section class="page-content">
+  <!-- ECOSYSTEM -->
+  <section class="partners-section" id="ecosystem">
     <div class="container">
-      <div class="content-card">
-        <h2>Page Under Development</h2>
-        <p>
-          This page is currently being developed. Content will be added in the next stage.
+
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Ecosystem</span>
+        <h2 class="section-title">Built Within a Multi-Stakeholder Support Network</h2>
+        <p class="section-lead">
+          Our technology development is supported by a diverse ecosystem of organizations spanning
+          innovation infrastructure, industry, academia, and government — providing the resources,
+          networks, and validation pathways needed to bring hydrogen retrofit systems to market.
         </p>
+      </div>
+
+      <!-- Partner Logos -->
+      <!-- Top row: BCCC, Riipen, AAC -->
+      <div class="logo-row reveal">
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo9.png" alt="BCCC" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo10.png" alt="Riipen" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/AAC.webp" alt="Alberta Aviation Council" />
+        </div>
+      </div>
+
+      <!-- Bottom row: remaining partners -->
+      <div class="logo-row logo-row--bottom reveal">
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo1.png" alt="Innovate Calgary" />
+        </div>
+        <div class="ecosystem-logo-card logo-card--alberta">
+          <img src="assets/ribbon/Logo2.1.png" alt="Alberta Innovates" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo4.png" alt="Calgary Economic Development" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo6.png" alt="Scribe National" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo7.png" alt="Trade Accelerator Program" />
+        </div>
+        <div class="ecosystem-logo-card">
+          <img src="assets/ribbon/Logo8.png" alt="M Reformer" />
+        </div>
+      </div>
+
+      <!-- Pillar Cards -->
+      <div class="ecosystem-pillars">
+        <div class="pillar-card reveal">
+          <span class="pillar-label">Innovation Infrastructure</span>
+          <h3>Accelerators &amp; Incubators</h3>
+          <p>
+            Operating through Calgary's aerospace and cleantech innovation ecosystem, with access to
+            facilities, mentorship networks, and commercialization programs that accelerate technology
+            readiness and market entry.
+          </p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-label">Government &amp; Funding</span>
+          <h3>Program Support</h3>
+          <p>
+            Supported by provincial and federal innovation programs focused on clean energy transition,
+            advanced manufacturing, and aerospace technology development in Western Canada.
+          </p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-label">Industry</span>
+          <h3>Sector Partners</h3>
+          <p>
+            Engaged with operators, OEMs, and supply-chain partners across aviation, marine, and energy
+            sectors — building the commercial relationships needed to validate and deploy retrofit
+            systems at scale.
+          </p>
+        </div>
+        <div class="pillar-card reveal">
+          <span class="pillar-label">Research &amp; Academia</span>
+          <h3>Technical Collaboration</h3>
+          <p>
+            Leveraging applied research capacity through university and institutional partnerships to
+            support hydrogen system integration, validation testing, and engineering development across
+            the platform.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COLLABORATIONS -->
+  <section class="partners-section" id="collaborations">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Collaborations</span>
+        <h2 class="section-title">Active Partnerships &amp; Collaboration Opportunities</h2>
+        <p class="section-lead">
+          Pazh Powertrain is actively building collaboration agreements across technology, research,
+          and commercial domains. We work with organizations that share a commitment to practical
+          decarbonization in hard-to-electrify sectors.
+        </p>
+      </div>
+
+      <div class="collab-grid">
+        <div class="collab-card reveal">
+          <span class="collab-tag">Technology</span>
+          <h3>System Integration Partners</h3>
+          <p>
+            Collaborating with engineering firms and OEM suppliers on hydrogen system integration,
+            control architecture, and platform-specific retrofit adaptation — from initial feasibility
+            through to validated prototype development.
+          </p>
+        </div>
+        <div class="collab-card reveal">
+          <span class="collab-tag">Research</span>
+          <h3>Applied Research Programs</h3>
+          <p>
+            Joint development programs with academic institutions focused on hydrogen combustion
+            optimization, safety validation, and system performance characterization under
+            real-world operating conditions.
+          </p>
+        </div>
+        <div class="collab-card reveal">
+          <span class="collab-tag">Commercial</span>
+          <h3>Operator Pilot Programs</h3>
+          <p>
+            Structured pilot arrangements with fleet operators and asset owners to validate retrofit
+            performance in active operational environments — providing mutual value through early
+            access and co-development of deployment pathways.
+          </p>
+        </div>
+        <div class="collab-card reveal">
+          <span class="collab-tag">Defense &amp; Dual-Use</span>
+          <h3>Mission-Critical Applications</h3>
+          <p>
+            Engagement with defense and government agencies exploring hydrogen retrofit for
+            mission-critical platforms, where fuel flexibility, resilience, and forward-deployment
+            capability are operational priorities.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="partners-cta">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2>Interested in Partnering?</h2>
+        <p>
+          Whether you represent an operator, research institution, government program, or technology
+          organization — we want to hear from you. Pazh Powertrain is actively expanding its
+          collaboration network across all target sectors.
+        </p>
+        <a href="index.html#contact" class="cta-btn">Get in Touch</a>
       </div>
     </div>
   </section>
@@ -84,6 +250,19 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
   </script>
+  <script src="breadcrumb.js"></script>
 </body>
 </html>

@@ -1,0 +1,392 @@
+/* =========================================
+   Partners Page
+========================================= */
+
+:root {
+  --partner-dark:       #1c2740;
+  --partner-panel:      #232f4a;
+  --partner-accent:     #a8c4e0;
+  --partner-accent-soft: rgba(168, 196, 224, 0.22);
+  --strip-light:        rgba(20, 32, 60, 0.06);
+  --strip-dark:         rgba(20, 32, 60, 0.14);
+}
+
+body {
+  background-color: #1c2740;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 15% 35%, rgba(60, 100, 180, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 85% 65%, rgba(40, 70, 150, 0.12) 0%, transparent 55%);
+  background-attachment: fixed;
+}
+
+/* =========================================
+   Hero
+========================================= */
+
+.partners-hero {
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 72px;
+  position: relative;
+  border-bottom: 1px solid rgba(168, 196, 224, 0.12);
+}
+
+.partners-hero-inner {
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.partners-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--partner-accent);
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.partners-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 24px;
+  max-width: 640px;
+}
+
+.partners-hero-sub {
+  align-self: flex-end;
+  max-width: 560px;
+  width: 560px;
+  font-size: 1.12rem;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 24px;
+  margin-right: 0;
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .partners-hero-sub {
+    align-self: flex-start;
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   Shared Section Styles
+========================================= */
+
+.partners-section {
+  padding: 100px 0;
+  position: relative;
+  border-bottom: 1px solid rgba(168, 196, 224, 0.10);
+}
+
+.partners-section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+  margin-bottom: 64px;
+  scroll-margin-top: 100px;
+  text-align: center;
+}
+
+.section-header .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--partner-accent);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.section-lead {
+  font-size: 1.04rem;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 640px;
+}
+
+/* =========================================
+   Ecosystem — Logo Grid + Cards
+========================================= */
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.logo-row--bottom {
+  margin-bottom: 64px;
+}
+
+.ecosystem-logo-card {
+  width: 200px;
+  flex: 0 0 200px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(168, 196, 224, 0.22);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  min-height: 100px;
+}
+
+.ecosystem-logo-card:hover {
+  background: rgba(168, 196, 224, 0.09);
+  border-color: rgba(168, 196, 224, 0.35);
+  transform: translateY(-3px);
+}
+
+.ecosystem-logo-card img {
+  max-width: 140px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.ecosystem-logo-card:hover img {
+  opacity: 1;
+}
+
+/* Alberta Innovates: nudge down to align optically */
+.logo-card--alberta img {
+  transform: translateY(6px);
+}
+
+.ecosystem-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.pillar-card {
+  background: linear-gradient(165deg, rgba(38, 52, 80, 0.80) 0%, rgba(28, 38, 64, 0.85) 100%);
+  border: 1px solid var(--partner-accent-soft);
+  border-radius: 20px;
+  padding: 32px 28px;
+  color: #fff;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pillar-card:hover {
+  border-color: rgba(168, 196, 224, 0.38);
+  transform: translateY(-3px);
+}
+
+.pillar-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--partner-accent);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pillar-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0;
+}
+
+/* =========================================
+   Collaborations — Opportunity Cards
+========================================= */
+
+.collab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.collab-card {
+  background: linear-gradient(165deg, rgba(38, 52, 80, 0.80) 0%, rgba(28, 38, 64, 0.85) 100%);
+  border: 1px solid var(--partner-accent-soft);
+  border-radius: 22px;
+  padding: 38px 34px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.collab-card:hover {
+  border-color: rgba(168, 196, 224, 0.40);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(168, 196, 224, 0.12);
+  transform: translateY(-4px);
+}
+
+.collab-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--partner-accent);
+  border: 1px solid rgba(168, 196, 224, 0.38);
+  background: rgba(168, 196, 224, 0.07);
+  border-radius: 999px;
+  padding: 4px 12px;
+  align-self: flex-start;
+}
+
+.collab-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0;
+}
+
+.collab-card p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+/* =========================================
+   CTA Panel
+========================================= */
+
+.partners-cta {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--partner-accent-soft);
+  border-radius: 28px;
+  padding: 56px 48px;
+  color: #fff;
+}
+
+.cta-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cta-card p {
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 32px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(168, 196, 224, 0.45);
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: rgba(168, 196, 224, 0.12);
+  border-color: rgba(168, 196, 224, 0.75);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   Reveal Animation
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 900px) {
+  body { background-attachment: scroll; }
+
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-logo-card {
+    width: 160px;
+    flex: 0 0 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .partners-hero {
+    padding: 90px 0 56px;
+  }
+
+  .partners-section {
+    padding: 72px 0;
+  }
+
+  .cta-card {
+    padding: 40px 28px;
+  }
+
+  .collab-card {
+    padding: 28px 24px;
+  }
+}
