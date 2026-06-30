@@ -98,6 +98,7 @@ body {
   background: linear-gradient(135deg, #7a868f, #a2adb6) !important;
   color: #fff !important;
   text-decoration: none;
+  margin-left: 16px;
   transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
 }
 

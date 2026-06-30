@@ -12,6 +12,7 @@
     'integration.html':            [{ name: 'Home', url: 'index.html' }, { name: 'Technology', url: 'technology.html' }],
     'system-components.html':      [{ name: 'Home', url: 'index.html' }, { name: 'Technology', url: 'technology.html' }],
     'partners.html':               [{ name: 'Home', url: 'index.html' }],
+    'about.html':                  [{ name: 'Home', url: 'index.html' }],
   };
 
   var PAGE_NAMES = {
@@ -26,6 +27,7 @@
     'integration.html':            'Integration',
     'system-components.html':      'System Components',
     'partners.html':               'Partners',
+    'about.html':                  'About Us',
   };
 
   function getCurrentPage() {
